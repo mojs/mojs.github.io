@@ -5,7 +5,9 @@
     "start": "vuepress dev docs",
     "build": "vuepress build docs"
   },
+  "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.47"
-  }
+  },
+  "deploy": "npm run build"
 }
