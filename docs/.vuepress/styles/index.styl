@@ -1,0 +1,99 @@
+@require './palette.styl'
+
+html, body {
+  color: $textColor;
+  background: $bgColor;
+  font-family 'Century Gothic', AppleGothic, 'CenturyGothic', apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+}
+
+// Overrides of vuepress
+:root {
+  h1, h2, h3, h4, h5, h5 {
+    font-weight: 400;
+  }
+  h1, h2 {
+    color: $accentColor;
+  }
+  h2 {
+    border: none
+  }
+  p, ul, ol {
+    line-height 2 // prevent inline code block from colliding with each other
+  }
+  .navbar {
+    background-color: $navbarBg;
+    border: none;
+    .links {
+      background-color: transparent;
+    }
+  }
+
+  .sidebar {
+    background-color: $sidebarBg;
+  }
+
+  // Custom blocks
+  .custom-block {
+    background-color $c-purple-light
+    color: $textColor
+    &.tip, &.warning, &.danger {
+      background-color $c-purple-light
+    }
+    &.tip {
+      border-color $c-green
+    }
+    &.warning {
+      border-color $c-yellow
+      .custom-block-title {
+        color $c-yellow
+      }
+    }
+    &.danger {
+      border-color $c-red
+      .custom-block-title {
+        color $c-red
+      }
+    }
+  }
+
+  // Code formating
+  .content {
+    code {
+      color $c-orange
+      padding 0.25rem 0.5rem
+      margin 0
+      font-size 0.85em
+      background-color transparent
+      border 1px solid $c-orange
+      border-radius 3px
+      user-select all
+    }
+    pre {
+      code {
+        border none
+      }
+    }
+  }
+
+}
+
+// Own components
+hr
+  border 0
+  border-top 1px solid $borderColor
+  position relative
+  margin-top 2rem
+  margin-bottom 2rem
+  overflow visible
+  &:after
+    content ''
+    display block
+    position absolute
+    top -0.5rem
+    left 0
+    width 4rem
+    height .875rem
+    padding-right 1rem
+    background: $c-purple url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjY0cHgiIGhlaWdodD0iMTRweCIgdmlld0JveD0iMCAwIDY0IDE0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5VbnRpdGxlZCA3PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbC0xMSIgc3Ryb2tlPSIjRkYzQzQwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIiBjeD0iNyIgY3k9IjciIHI9IjYiPjwvY2lyY2xlPgogICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtNTMiIHN0cm9rZT0iIzUwRTNDMiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgeD0iMjYiIHk9IjEiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PC9yZWN0PgogICAgICAgIDxnIGlkPSJQYXRoLTI4LSstUGF0aC0yOSIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuMDAwMDAwLCAxLjAwMDAwMCkiIHN0cm9rZT0iI0ZGRDk0QiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjM2MDY3NzA4MywwLjM5NDUzMTI1IEwxMS45MTUzNjQ2LDExLjc2MDQxNjciIGlkPSJQYXRoLTI4IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjcwODMzMzMzMywxMS41NTcyOTE3IEwxMi4wNTk4OTU4LDAuNTUyMDgzMzMzIiBpZD0iUGF0aC0yOSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+') no-repeat
+
+
