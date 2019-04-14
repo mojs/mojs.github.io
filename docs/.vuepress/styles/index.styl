@@ -66,11 +66,16 @@ html, body {
       background-color transparent
       border 1px solid $c-orange
       border-radius 3px
-      user-select all
+      user-select all // autoselect smaller inline styles but not larger code blocks that has a language specified
     }
     pre {
       code {
         border none
+      }
+    }
+    .language-javascript, .language-js, .language-jsx {
+      code {
+        user-select auto
       }
     }
   }
@@ -97,3 +102,12 @@ hr
     background: $c-purple url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjY0cHgiIGhlaWdodD0iMTRweCIgdmlld0JveD0iMCAwIDY0IDE0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnNrZXRjaD0iaHR0cDovL3d3dy5ib2hlbWlhbmNvZGluZy5jb20vc2tldGNoL25zIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy4zLjIgKDEyMDQzKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5VbnRpdGxlZCA3PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc2tldGNoOnR5cGU9Ik1TUGFnZSI+CiAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbC0xMSIgc3Ryb2tlPSIjRkYzQzQwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIiBjeD0iNyIgY3k9IjciIHI9IjYiPjwvY2lyY2xlPgogICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtNTMiIHN0cm9rZT0iIzUwRTNDMiIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCIgeD0iMjYiIHk9IjEiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PC9yZWN0PgogICAgICAgIDxnIGlkPSJQYXRoLTI4LSstUGF0aC0yOSIgc2tldGNoOnR5cGU9Ik1TTGF5ZXJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTEuMDAwMDAwLCAxLjAwMDAwMCkiIHN0cm9rZT0iI0ZGRDk0QiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjM2MDY3NzA4MywwLjM5NDUzMTI1IEwxMS45MTUzNjQ2LDExLjc2MDQxNjciIGlkPSJQYXRoLTI4IiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0wLjcwODMzMzMzMywxMS41NTcyOTE3IEwxMi4wNTk4OTU4LDAuNTUyMDgzMzMzIiBpZD0iUGF0aC0yOSIgc2tldGNoOnR5cGU9Ik1TU2hhcGVHcm91cCI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+') no-repeat
 
 
+.example-anim {
+  background: #f1e2d7;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  svg {
+    overflow: visible // for overshoots animations
+  }
+}

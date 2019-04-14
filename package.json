@@ -9,5 +9,8 @@
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.47"
   },
-  "deploy": "npm run build"
+  "deploy": "npm run build",
+  "dependencies": {
+    "mo-js": "^0.288.2"
+  }
 }
