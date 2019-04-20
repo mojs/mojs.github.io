@@ -11,6 +11,8 @@
   },
   "deploy": "npm run build",
   "dependencies": {
-    "mo-js": "^0.288.2"
+    "mo-js": "^0.288.2",
+    "mojs-player": "^0.43.16",
+    "vue-prism-editor": "^0.1.2"
   }
 }
