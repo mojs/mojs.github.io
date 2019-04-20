@@ -111,3 +111,33 @@ hr
     overflow: visible // for overshoots animations
   }
 }
+
+// Temp button. Use the "material design" button from the original site instead
+.button {
+  background: $accentColor;
+  color: $textColor;
+  border: none;
+  padding: 1em 2em;
+  font-size: 0.7rem;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  &--secondary {
+    background: $c-purple;
+    border: 1px solid $accentColor;
+    color: $accentColor;
+  }
+  &--icon {
+    background: transparent;
+    font-size: 2rem;
+    padding: 0.4em;
+    line-height: 1;
+    color: $accentColor;
+  }
+}
+
+.button + .button {
+  margin-left: 0.5rem
+}

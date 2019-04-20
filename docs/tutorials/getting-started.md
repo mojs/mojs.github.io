@@ -12,57 +12,63 @@
 
 - Create your animations. What about a bouncy circle?
 
+
 <ClientOnly>
-  <ExampleCircle>
-  ```js
-  var circle = new mojs.Shape({
-    parent:       '#circle-anim',
-    shape:        'circle',
-    fill:         {'#F64040': '#FC46AD'},
-    radius:       {20: 80},
-    duration:     2000,
-    isYoyo:       true,
-    easing:       'elastic.inout',
-    repeat:       999,
-  })
-  .play();
-  ```
-  </ExampleCircle>
+  <MojsInteractive
+    id="bouncy_circle"
+    :controller=true
+    code=
+"new mojs.Shape({
+  parent:       '#bouncy_circle',
+  shape:        'circle',
+  fill:         {'#F64040': '#FC46AD'},
+  radius:       {20: 80},
+  duration:     2000,
+  isYoyo:       true,
+  isShowStart:  true,
+  easing:       'elastic.inout',
+  repeat:       1,
+})"
+  >
+  </MojsInteractive>
 </ClientOnly>
+
+---
 
 Or maybe a loading animation?
 
 <ClientOnly>
-  <ExampleSpinner height="200px" id="spinner">
-  ```js
-  var loader = new mojs.Shape({
-    parent:           '#spinner',
-    shape:            'circle',
-    stroke:           '#FC46AD',
-    strokeDasharray:  '125, 125',
-    strokeDashoffset: {'0': '-125'},
-    strokeWidth:      4,
-    fill:             'none',
-    left:             '50%',
-    top:              '50%',
-    angle:            {'-90': '270'},
-    radius:           20,
-    isShowStart:      true,
-    duration:         2000,
-    easing:           'back.in',
-  })
-  .then({
-    angle:            {'-90': '270'},
-    strokeDashoffset: {'-125': '-250'},
-    duration:         3000,
-    easing:           'cubic.out',
-    onComplete () {
-      loader.replay(0); // create an infinite loop
-    }
-  })
-  .play();
-  ```
-  </ExampleSpinner>
+  <MojsInteractive
+    id="spinner"
+    height="200px"
+    code=
+"new mojs.Shape({
+  parent:           '#spinner',
+  shape:            'circle',
+  stroke:           '#FC46AD',
+  strokeDasharray:  '125, 125',
+  strokeDashoffset: {'0': '-125'},
+  strokeWidth:      4,
+  fill:             'none',
+  left:             '50%',
+  top:              '50%',
+  angle:            {'-90': '270'},
+  radius:           20,
+  isShowStart:      true,
+  duration:         2000,
+  easing:           'back.in',
+})
+.then({
+  angle:            {'-90': '270'},
+  strokeDashoffset: {'-125': '-250'},
+  duration:         3000,
+  easing:           'cubic.out',
+  onComplete () {
+    this.replay(0); // create an infinite loop
+  }
+})"
+  >
+  </MojsInteractive>
 </ClientOnly>
 
 Go creative!
