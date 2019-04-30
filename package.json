@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "mojs.github.io",
   "version": "1.0.0",
   "scripts": {
     "start": "vuepress dev docs",
