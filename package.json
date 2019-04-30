@@ -19,6 +19,9 @@
     "documentation"
   ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mojs/mojs.github.io/issues"
+  },
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.47"
