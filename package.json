@@ -2,6 +2,7 @@
   "name": "mojs.github.io",
   "version": "1.0.0",
   "description": "Official mojs website for tutorials and documentation",
+  "private": true,
   "scripts": {
     "start": "vuepress dev docs",
     "build": "vuepress build docs"
