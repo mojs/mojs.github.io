@@ -11,6 +11,13 @@
     "type": "git",
     "url": "git+https://github.com/mojs/mojs.github.io.git"
   },
+  "keywords": [
+    "site",
+    "web",
+    "mojs",
+    "tutorials"
+    "documentation"
+  ],
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.47"
