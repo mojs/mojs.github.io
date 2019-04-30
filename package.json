@@ -7,6 +7,10 @@
     "start": "vuepress dev docs",
     "build": "vuepress build docs"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mojs/mojs.github.io.git"
+  },
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.47"
