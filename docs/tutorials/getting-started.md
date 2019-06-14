@@ -13,11 +13,10 @@
 - Create your animations. What about a bouncy circle?
 
 
-<ClientOnly>
-  <MojsInteractive
-    id="bouncy_circle"
-    :controller=true
-    code=
+<MojsInteractive
+  id="bouncy_circle"
+  :controller=true
+  code=
 "new mojs.Shape({
   parent:       '#bouncy_circle',
   shape:        'circle',
@@ -29,19 +28,19 @@
   easing:       'elastic.inout',
   repeat:       1,
 })"
-  >
-  </MojsInteractive>
-</ClientOnly>
+>
+</MojsInteractive>
+
 
 ---
 
 Or maybe a loading animation?
 
-<ClientOnly>
-  <MojsInteractive
-    id="spinner"
-    height="200px"
-    code=
+
+<MojsInteractive
+  id="spinner"
+  height="200px"
+  code=
 "new mojs.Shape({
   parent:           '#spinner',
   shape:            'circle',
@@ -67,9 +66,9 @@ Or maybe a loading animation?
     this.replay(0); // create an infinite loop
   }
 })"
-  >
-  </MojsInteractive>
-</ClientOnly>
+>
+</MojsInteractive>
+
 
 Go creative!
 

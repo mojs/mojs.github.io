@@ -38,7 +38,7 @@ module.exports = {
         children: [
           '/tutorials/',
           '/tutorials/getting-started.md',
-          '/tutorials/shape-swirl.md',
+          '/tutorials/shape-swirl/',
         ]
       },
       '/tools/',

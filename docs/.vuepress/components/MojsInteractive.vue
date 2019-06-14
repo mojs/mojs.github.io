@@ -1,40 +1,58 @@
-/*
+/**
 Usage:
-<ClientOnly>
-  <MojsInteractive
-    id="unique_id"
-    :controller=true
-    code=
+<MojsInteractive
+  id="unique_id"
+  code=
 "new mojs.Shape({
   parent:       '#unique_id',
   shape:        'circle',
   radius:       {20: 80},
 })"
-  >
-  </MojsInteractive>
-</ClientOnly>
+/>
+
+or if you wanna declare a height or a controller:
+
+<MojsInteractive
+  id="unique_id"
+  :controller=true
+  height="200px"
+  code=
+"new mojs.Shape({
+  parent:       '#unique_id',
+  shape:        'circle',
+  radius:       {20: 80},
+})"
+/>
 */
+
 <template>
   <div class="mojs-interactive">
-    <div class="mojs-interactive__code">
+    <div
+      class="mojs-interactive__code"
+      :class="{ 'mojs-interactive__code--pinned': isPinned }"
+    >
       <prism-editor :code="code" language="js" @change="change"></prism-editor>
+      <button class="button button--icon button--pin" v-on:click="pin" aria-label="Pin the code on scroll">
+        {{ isPinned ? "✖️" : "📍" }}
+      </button>
       <div class="buttons">
         <button class="button button--secondary" v-on:click="reset">Reset</button>
         <button class="button" v-on:click="updateCode">Update code</button>
       </div>
     </div>
-    <div :id="this.id" class="mojs-interactive__result" :style="style">
-      <button class="button button--icon" v-if="isPlaying && !controller" v-on:click="pause" aria-label="Pause animation">⑊</button>
-      <button class="button button--icon" v-if="!isPlaying && !controller" v-on:click="play" aria-label="Play animation">▶︎</button>
+    <div
+      :id="this.id"
+      class="mojs-interactive__result"
+      :style="style"
+    >
+      <button class="button button--icon button--control" v-if="!controller" v-on:click="playPause" :aria-label="isPlaying ? 'Pause animation' : 'Play animation'">{{isPlaying ? '⑊' : '︎︎︎▶︎'}}</button>
+      <!-- <button class="button button--icon button--control" v-if="!isPlaying && !controller" v-on:click="play" aria-label="Play animation">▶︎</button> -->
       <div v-if="controller" :id="this.id + '_controller'" class="mojs-interactive__controller"></div>
     </div>
   </div>
 </template>
 
 <script>
-  import mojs from 'mo-js';
-  import MojsPlayer from 'mojs-player';
-
   import prism from 'prismjs';
   import PrismEditor from 'vue-prism-editor'
 
@@ -54,6 +72,7 @@ Usage:
       return {
         rawCode: this.code,
         isPlaying: false,
+        isPinned: false,
       }
     },
 
@@ -85,8 +104,17 @@ Usage:
         const func = new Function('window["demo_' + this.id + '"] = ' + code);
         try {
           func();
-          if (!this.controller) {
-            window['demo_' + this.id].play();
+          if (!this.controller) {            
+            this.timeline = new mojs.Timeline({
+              onPlaybackComplete: () => {
+                this.isPlaying = false;
+              }
+            })
+            .add(
+              window['demo_' + this.id]
+            )
+            .play();
+            
             this.isPlaying = true;
           }
         }
@@ -119,21 +147,28 @@ Usage:
         this.handleCode(this.code);
       },
 
-      pause: function() {
-        window['demo_' + this.id].pause();
-        this.isPlaying = false;
+      playPause: function() {
+        if (this.isPlaying) {
+          this.timeline.pause();
+        } else {
+          this.timeline.play();
+
+        }
+        this.isPlaying = !this.isPlaying;
       },
 
-      play: function() {
-        window['demo_' + this.id].play();
-        this.isPlaying = true;
+      pin: function() {
+        this.isPinned = !this.isPinned;
       }
     },
 
-    mounted: function () {
-      this.handleCode(this.code);
+    mounted () {
+      import('mo-js').then(module => {
+        import('mojs-player').then(module => {
+          this.handleCode(this.code);
+        });
+      });
     }
-
   }
 </script>
 
@@ -147,15 +182,35 @@ Usage:
   bottom: 1rem;
   right: 1rem;
 }
+/* TODO: Add the pinned to the container, co both the code and the code exmple can be side by side. 
+  And add a placeholder block where the old elements had been so the text doesnt jump.
+ */
+.mojs-interactive__code.mojs-interactive__code--pinned {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 200;
+  background: #2b062a;
+}
+.mojs-interactive__code.mojs-interactive__code--pinned .prism-editor-wrapper {
+  max-height: 50vh;
+  overflow: auto;
+}
+.mojs-interactive__code .button--pin {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .mojs-interactive__result {
   position: relative;
 }
-.mojs-interactive__result .button {
+.mojs-interactive__result .button--control {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-
 .mojs-interactive__result {
   background: #f1e2d7;
   width: 100%;
