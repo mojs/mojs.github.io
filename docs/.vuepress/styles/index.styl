@@ -23,6 +23,8 @@ html, body {
   .navbar {
     background-color: $navbarBg;
     border: none;
+    position: sticky;
+    top: 0;
     .links {
       background-color: transparent;
     }
@@ -30,6 +32,12 @@ html, body {
 
   .sidebar {
     background-color: $sidebarBg;
+  }
+
+  .content__default {
+    max-width: 60em; 
+    margin: 0 auto;
+    padding: 0 4%;
   }
 
   // Custom blocks
