@@ -26,16 +26,3 @@
 
   }
 </script>
-
-<style>
-.test {
-  background: #f1e2d7;
-  width: 100%;
-  height: 400px;
-  position: relative;
-}
-.test svg {
-  overflow: visible
-}
-
-</style>

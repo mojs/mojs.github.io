@@ -24,12 +24,15 @@
   },
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "vuepress": "^1.0.1"
   },
   "deploy": "npm run build",
   "dependencies": {
     "mo-js": "^0.288.2",
     "mojs-player": "^0.43.16",
+    "vue-badger-accordion": "^1.1.3",
     "vue-prism-editor": "^0.1.2"
   }
 }

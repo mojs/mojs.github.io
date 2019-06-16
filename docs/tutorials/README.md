@@ -12,5 +12,5 @@ sidebarDepth: 0
 - [APIs Overview](#) (Need to be written)
 
 ## Modules
-- [Shape & ShapeSwirl](./shape-swirl.md)
-- [Burst](./burst.md)
+- [Shape & ShapeSwirl](./shape-swirl/)
+- [Burst](./burst/)

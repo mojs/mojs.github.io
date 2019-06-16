@@ -14,3 +14,14 @@ Website for mo · js with tutorials and documentation.
 
 ## Tips for docs writers
 If you need very special demo that doesn't work with the `<MojsCode>`or the `MojsInteractive` components, create a new component and add it to the folder "components". Make shure the name doen't contain a number, VuePress doesn't like that.
+
+### Known bugs
+* If you get a `Unknown custom element:` or any other wierd errors, try restarting VuePress by stopping the process in tour terminal and run `npm run start` again to clear the VuePress cache. It's probably due to some JS error in a custom component that you used wrote.
+
+* If you get an `Errors compiling template: tag <p> has no matching end tag.`, make sure you have a dubble line break before any html comments (`<!--`). Like this:
+
+  ```md
+  My code
+
+  <!-- Some html comment -->
+  ```
