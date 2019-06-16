@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <div class="hero">
-      <img
+      <DemoMojsLogoReveal isPlaying />
+      <!-- <img
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
         alt="hero"
-      >
+      > -->
 
       <p
         class="action"

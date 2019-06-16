@@ -1,4 +1,5 @@
 # Shape & ShapeSwirl
+<!-- Author comment: When there is a code example with and id like this: 6bc8f77ec8528e0c8c394660db150a9e, there is an original pen by legomushroom with the same id, like https://codepen.io/sol0mka/pen/6bc8f77ec8528e0c8c394660db150a9e -->
 
 This post is about Shape and ShapeSwirl - modules that help you to bootstrap motion effects.
 - [API reference](/api/shape-swirl)
@@ -1134,9 +1135,10 @@ Here above, we are using percent values for `strokeDashoffset` property so we ha
 
 ## ShapeSwirl
 
-`ShapeSwirl` module basically is a `Shape` with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories **(click somewhere to see)**.
+`ShapeSwirl` module basically is a `Shape` with a little bit more functionality bolted on. ShapeSwirl automatically calculates sinusoidal x/y path for shape making it easy to send the shapes over sine trajectories.
 
 <MojsCode
+  notice="Click anywhere to trigger the animation"
   id="c6888ce5c9f81ad825444d969779eadc"
   code=
 "const shapeswirl = new mojs.ShapeSwirl({
@@ -1153,7 +1155,7 @@ shapeSwirlContainer.addEventListener('click', function () {
 >
 ```js
 const shapeswirl = new mojs.ShapeSwirl({
-  fill:           'cyan',
+  fill:           '#F64040',
   y:              { 0: -150 },
   duration:       1000
 });
@@ -1181,11 +1183,14 @@ const shapeSwirl = new mojs.ShapeSwirl({
 });
 ```
 
+### 1. isSwirl
 The `isSwirl` property (`true` by default) defines if shape should follow sine path, if set to `false` it will act exactly the same as simple `Shape`.
 
+### 2. swirlSize
 The `swirlSize` property (`10` by default) defines the deviation or amplitude of the sine. Here is an example with `swirlSize: 35`:
 
 <MojsCode
+  notice="Click anywhere to trigger the animation"
   id="pen_0b3e2fe009d06a67a08e8ae04a7f7904"
   code=
 "const shapeswirl2 = new mojs.ShapeSwirl({
@@ -1207,7 +1212,7 @@ shapeSwirlContainer2.addEventListener('click', function () {
 >
 ```js
 const swirl = new mojs.ShapeSwirl({
-  fill:           'cyan',
+  fill:           '#F64040',
   y:              { 0: -150 },
   radius:         8,
   swirlSize:      35,
@@ -1218,184 +1223,383 @@ const swirl = new mojs.ShapeSwirl({
 ```
 </MojsCode>
 
+### 3. swirlFrequency
+The `swirlFrequency` property (`3` by default) defines the frequency of the sine, here is an example with `swirlFrequency: 10`:
 
-<!--
-The `swirlFrequency` property (`3` by default) defines the frequency of the sine, there is the example with `swirlFrequency: 10`:
+<MojsCode
+  notice="Click anywhere to trigger the animation"
+  id="pen_d63af6450cb170fafc8636f185634830"
+  code=
+"const shapeswirl3 = new mojs.ShapeSwirl({
+  parent:         '#pen_d63af6450cb170fafc8636f185634830',
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlFrequency: 10, 
+  duration:       1000,
+});
 
-     // pen id: d63af6450cb170fafc8636f185634830
-                {
-                  { js: `const swirl = new mojs.ShapeSwirl({
-      fill:           'cyan',
-      y:              { 0: -150 },
-      radius:         8,
-      swirlFrequency: 10, 
-      duration:       1000,
-    });`
-                  }
-                }
+const shapeSwirlContainer3 = document.getElementById('pen_d63af6450cb170fafc8636f185634830');
+shapeSwirlContainer3.addEventListener('click', function () {
+  shapeswirl3.replay();
+});
+"
+>
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  swirlFrequency: 10, 
+  duration:       1000,
+});
+```
+</MojsCode>
 
-The `direction` property (`1` by default) defines direction of the amplitude of the sine - it have value of either `1` or `-1`. There is the example for `-1` note how it starts to the left instead of right:
+### 4. direction
+The `direction` property (`1` by default) defines direction of the amplitude of the sine - it have value of either `1` or `-1`. Here is the example for `-1`. Note how it starts to the left instead of right:
 
-     // pen id: f1fb2e4dc7bb9b11e3b6b96299fa99f9
-                {
-                  { js: `const swirl = new mojs.ShapeSwirl({
-      fill:           'cyan',
-      y:              { 0: -150 },
-      radius:         8,
-      direction:      -1,
-      swirlSize:      35,
-      swirlFrequency: 4,
-      duration:       1000
-    });`
-                  }
-                }
+<MojsCode
+  notice="Click anywhere to trigger the animation"
+  id="f1fb2e4dc7bb9b11e3b6b96299fa99f9"
+  code=
+"const shapeswirl4 = new mojs.ShapeSwirl({
+  parent:         '#f1fb2e4dc7bb9b11e3b6b96299fa99f9',
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  direction:      -1,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000
+});
 
+const shapeSwirlContainer4 = document.getElementById('f1fb2e4dc7bb9b11e3b6b96299fa99f9');
+shapeSwirlContainer4.addEventListener('click', function () {
+  shapeswirl4.replay();
+});
+"
+>
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  direction:      -1,
+  swirlSize:      35,
+  swirlFrequency: 4,
+  duration:       1000
+});
+```
+</MojsCode>
+
+### 5. pathScale
 The `pathScale` property (`1` by default) defines the scale size of the sine path. Here is an example of `pathScale: .5` - which scales the sine by half (of the original radius):
 
-     // pen id: b4c26893f3814227480d7cc5ab5ceded
-                {
-                  { js: `const swirl = new mojs.ShapeSwirl({
-      fill:           'cyan',
-      y:              { 0: -150 },
-      radius:         8,
-      pathScale:      .5,
-      duration:       1000,
-    });`
-                  }
-                }
+<MojsCode
+  notice="Click anywhere to trigger the animation"
+  id="b4c26893f3814227480d7cc5ab5ceded"
+  code=
+"const shapeswirl4 = new mojs.ShapeSwirl({
+  parent:         '#b4c26893f3814227480d7cc5ab5ceded',
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
 
-You are probably thinking - why not just to shorten the `y` value instead of `pathScale` one? Well, because the `pathScale` scales the actual path of the swirl, for instance if you will add the transition for the `x` property, the path scale will affect the product of `y` and `x` - actual path that the shape makes while moves (click somewhere to see):
+const shapeSwirlContainer4 = document.getElementById('b4c26893f3814227480d7cc5ab5ceded');
+shapeSwirlContainer4.addEventListener('click', function () {
+  shapeswirl4.replay();
+});
+"
+>
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+```
+</MojsCode>
 
-     // pen id: 49bc780ab7d4d812e1832437fa9c6762
-                {
-                  { js: `const swirl = new mojs.ShapeSwirl({
-      fill:           'cyan',
-      x:              { 0: -100 },
-      y:              { 0: -150 },
-      radius:         8,
-      pathScale:      .5,
-      duration:       1000,
-    });`
-                  }
-                }
+
+You are probably thinking - why not just to shorten the `y` value instead of `pathScale` one? Well, because the `pathScale` scales the actual path of the swirl, for instance if you will add the transition for the `x` property, the path scale will affect the product of `y` and `x` - the actual path that the shape makes while move:
+
+<MojsCode
+  notice="Click anywhere to trigger the animation"
+  id="pen_49bc780ab7d4d812e1832437fa9c6762"
+  code=
+"const shapeswirl5 = new mojs.ShapeSwirl({
+  parent:         '#pen_49bc780ab7d4d812e1832437fa9c6762',
+  fill:           '#F64040',
+  x:              { 0: -100 },
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+
+const shapeSwirlContainer5 = document.getElementById('pen_49bc780ab7d4d812e1832437fa9c6762');
+shapeSwirlContainer5.addEventListener('click', function () {
+  shapeswirl5.replay();
+});
+"
+>
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  x:              { 0: -100 },
+  y:              { 0: -150 },
+  radius:         8,
+  pathScale:      .5,
+  duration:       1000,
+});
+```
+</MojsCode>
 
 The `pathScale` property will become very useful when we will discuss the `Burst` module shortly and will have a bunch of `ShapeSwirls` at once, especially when we will need to randomize their sine lengths.
 
-The `degreeShift` property (`0` by default) defines angle of the swirl. This property becomes interesting when `shapeSwirl` is used inside other modules (like `Burst`). For now it will act just like angle of the sine path, there is the example for `degreeShift: 90`:
+### 6. degreeShift
+The `degreeShift` property (`0` by default) defines angle of the swirl. This property becomes interesting when `shapeSwirl` is used inside other modules (like `Burst`). For now it will act just like angle of the sine path. Here is an example for `degreeShift: 90`:
 
-     // pen id: 6bc8f77ec8528e0c8c394660db150a9e
-                {
-                  { js: `const swirl = new mojs.ShapeSwirl({
-      fill:           'cyan',
-      y:              { 0: -150 },
-      radius:         8,
-      degreeShift:    90,
-      duration:       1000,
-    });`
-                  }
-                }
+<MojsCode
+  notice="Click anywhere to trigger the animation"
+  id="pen_6bc8f77ec8528e0c8c394660db150a9e"
+  code=
+"const shapeswirl5 = new mojs.ShapeSwirl({
+  parent:         '#pen_6bc8f77ec8528e0c8c394660db150a9e',
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  degreeShift:    90,
+  duration:       1000,
+});
 
-How ShapeSwirl can be handy will be cristal clear soon, in short, the main idea behind swirls is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs shapes to move over sine path (click somewhere to see):
+const shapeSwirlContainer5 = document.getElementById('pen_6bc8f77ec8528e0c8c394660db150a9e');
+shapeSwirlContainer5.addEventListener('click', function () {
+  shapeswirl5.replay();
+});
+"
+>
+```js
+const swirl = new mojs.ShapeSwirl({
+  fill:           '#F64040',
+  y:              { 0: -150 },
+  radius:         8,
+  degreeShift:    90,
+  duration:       1000,
+});
+```
+</MojsCode>
 
-    // pen id: 90e2506d73313d14d49486f7d71fb9d0
+How ShapeSwirl can be handy will be cristal clear soon, in short, the main idea behind swirls is to give you the ability to compose dust/smoke/bubbles effects or basically any effect that needs shapes to move over sine path:
 
-In any other aspect, the `ShapeSwirl` is the same as a simple `Shape`.
+<MojsCode
+  notice="Click anywhere to see"
+  id="pen_90e2506d73313d14d49486f7d71fb9d0"
+  code=
+"
+const SWIRL_OPTS = {
+  left: 0, top: 0,
+  fill:           '#F64040',
+  duration:       'rand(600, 1000)',
+  radius:         'rand(10, 20)',
+  pathScale:      'rand(.5, 1)',
+  swirlFrequency: 'rand(2,4)',
+  swirlSize: 'rand(6,14)',
+}
+
+const swirl1 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl2 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS,
+  direction: -1
+});
+
+const swirl3 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+  
+const swirl4 = new mojs.ShapeSwirl({
+  ...SWIRL_OPTS
+});
+
+const shapeSwirlContainer6 = document.getElementById('pen_90e2506d73313d14d49486f7d71fb9d0');
+shapeSwirlContainer6.addEventListener('click', function (e) {
+  const x = e.pageX,
+        y = { [e.pageY]: e.pageY-150 };
+  swirl1
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl2
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl3
+    .tune({ x, y })
+    .generate()
+    .replay();
+  
+  swirl4
+    .tune({ x, y })
+    .generate()
+    .replay();
+});
+"
+>
+
+  [See code here](https://codepen.io/sol0mka/pen/90e2506d73313d14d49486f7d71fb9d0)
+
+</MojsCode>
+
+Except those 6 properties, the `ShapeSwirl` is the same as a simple `Shape`.
+
 
 ## Recap
 
-That was a pretty fast intro to the `Shape` module. You can use [Shape APIs](/api/shape.md) and [ShapeSwirl API](/api/shape-swirl.md) sections as reference further on. What is important at this point — is that you should understand the ability to create a `Shape` in any part of the screen or HTMLElement. If you want to animate some property — you add a `delta` object that describes the transition of that property. You can chain the shape transitions with `then` calls and `tune` new properties when you want. Tweenable interface allows you to work with `Shape` same as you work with any other `Tween`.
+That was a pretty fast intro to the `Shape` module. You can use [Shape APIs](/api/shape) and [ShapeSwirl API](/api/shape-swirl) sections as reference further on. What is important ro remember: 
+* You can create a `Shape` in any part of the screen, or an HTML element using the parent prop.
+* If you want to animate some property — you add a `delta` object (`{'from': to}`) that describes the transition of that property.
+* You can chain the shape transitions with `then` calls and `tune` new properties when you want.
+* Tweenable interface allows you to work with `Shape` in the same way you work with any other `Tween`.
 
 Now you probably asking yourself - Why do we need something as simple as an animatable shape? In the next section I will cover few use cases for shapes but most importantly it will become crystal clear why do we need shapes in the next [Burst Tutorial](/tutorials/burst/). Probably, you can treat this tutorial as finished at this point, the further sections are rather optional and were written just for fun. So you can skip reading them in favor of [Burst Tutorial](/tutorials/burst/) but I highly encourage you to continue reading to gain solid understanding of the shapes.
 
+* * *
+
 ## Use Cases
 
-> Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the `Babel` tab of the pens and I highly encourage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (Codepen can contain bundled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the Codepen for now.
+> Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available in the Codepen link and I highly encourage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (Codepen can contain bundled code) or it could be too large to understand sparingly, but you can return to them later, - after you will complete this tutorial. I will leave a little (×) mark for you to indicate that you can skip reading the source code of the Codepen for now.
 
 Despite the fact that `Shape` and `ShapeSwirl` modules are nothing than tiny bits that compose higher order modules creating some matured effects, they have strong use cases and can be used on their own. There is no thing in the whole world such expressive and appealing as simple geometric shapes so they are ubiquitous in the motion graphics nowadays. You can use shapes in your animations to add special effects and details making your animation more expressive. Also, `Shapes` are often used to implode them into `UI` thus enhancing it. From the development point of view — `Shape` can be created with just one declarative call allowing you to focus entirely on you motion sequences and don't spend the time bootstrapping things, this fact powers you with a `"shape framework"` to think in, so your motion sequences get more organized and consistent.
 
-I hope you don't believe that `Shapes` are useful just because I claimed it out loud, so let me convince you with the next real world use cases. Note that the code samples are omitted in this section but feel free to check the `Babel` tab of the Codepen samples and tweak the part that interests you.
+I hope you don't believe that `Shapes` are useful just because I claimed it out loud, so let me convince you with the next real world use cases. Note that the code samples are omitted in this section but feel free to check Codepen link to tweak the part that interests you.
 
 ### Motion Graphics Use Cases
 
-Motion graphics indeed one of the strongest use cases for `Shapes`. Nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequences based entirely on geometric or custom shapes or use them aside as reinforcement support.
+Motion graphics is indeed one of the strongest use cases for `Shapes`. Nothing breathes life into static content better than the use of motion graphics. With shapes, the limits are simply the imagination of the designer or the artist, - you can create complex mograph sequences based entirely on geometric or custom shapes or use them aside as reinforcement support.
 
 #### Bubbles
 
 Let's start with the simple intro sequence, it was composed of custom "speech bubble" shapes and few built in ones.
 
-    // pen id: 2ef10ed42ff535182c31cd1dbb81e453
+<DemoSpeechBubble />
+[Link to pen](https://codepen.io/sol0mka/pen/EyKxqO)
 
 Custom shapes allow you to use shapes that suite your current needs. To be clear that's not just images that you can animate inside some wrapper, they are highly styleable shapes thus a way flexible than just an image or HTMLElement with some background.
 
 #### Geometric Scenes
 
-Let's walk thru some short random geometric scenes just to get some intuition about shape usage with mograph. After that, we will combine them to get slightly longer intro sequence.
+Let's walk through some short random geometric scenes just to get some intuition about shape usage with mograph. After that, we will combine them to get slightly longer intro sequence.
 
 We will start with a simple and appealing triangles scene. Just 6 triangles and few `then` statements:
 
-    // pen id: 4db9ec6079a3537d8c60ec888dd8e532
+<DemoTriangles />
+[Link to pen](https://codepen.io/sol0mka/pen/4db9ec6079a3537d8c60ec888dd8e532)
 
 We will compose the next scene by using another 6 triangles, slightly more elegant, with a little contrast to the first one, but still quite simple:
 
-    // pen id: c0b7b94e90142f19acba6ed9a4b05a2f
+<DemoElegantTriangles />
+[Link to pen](https://codepen.io/sol0mka/pen/c0b7b94e90142f19acba6ed9a4b05a2f)
 
 Let's do the next one with contrast to these two, - simple rectangle with some sparks, this one rather funky:
 
-    // pen id: c33a3582fc02842b99fa6eb01be6b3ba" height="700
+<DemoFunkySquare />
+[Link to pen](https://codepen.io/sol0mka/pen/c33a3582fc02842b99fa6eb01be6b3ba)
 
-Note that the best suite for white `sparks` effect on the sides of the square is the `Burst` module which we will discuss shortly in the next tutorial, meanwhile in this particular demo, it was made with custom shapes to give you yet another clue how you would use the custom shapes.
+Note that the best module to use for the white `sparks` effect on the sides of the square would be the `Burst` module which we will discuss shortly in the next tutorial. Meanwhile in this particular demo, it was made with custom shapes to give you yet another clue how you would use the custom shapes.
 
 After that we need a nice transition between screens, just a few circles will do the trick:
 
-    // pen id: 95a862f1ad8445134466ad7d64213d46" height="700
+<DemoExpandingCircles />
+[Link to pen](https://codepen.io/sol0mka/pen/95a862f1ad8445134466ad7d64213d46)
+
+::: warning Accessibility warning
+When making fullscreen transitions, make sure to include a chech for if the user preferes reduced motion. We don't wanna trigger a migrane attack for our user. For example, you can play the animation from the end instead of frame 0, to ensure the last frame will be visible (like we do in this example when you press the play button here and has reduced motion set in your computers preferences):
+
+```js
+let prefersReducedMotion = false;
+const motionQuery = matchMedia('(prefers-reduced-motion)');
+const handleReduceMotionChanged = () => {
+  prefersReducedMotion = motionQuery.matches; // set to true if user preferes reduced motion
+}
+motionQuery.addListener(handleReduceMotionChanged);
+handleReduceMotionChanged(); // trigger once on load to check initial value
+
+this.timeline.play(
+  prefersReducedMotion ? 1000 : 0; // 1000 = the length/end of the timeline
+);
+```
+[Read more at CSS-tricks](https://css-tricks.com/introduction-reduced-motion-media-query/).
+:::
 
 The last scene for this sequence would be `mojs` logo reveal - use case for shapes in tandem with `property curves`:
 
-    // pen id: b37bb9c6dede99d0ac75d60b5fb0d43d" height="700
+<DemoMojsLogoReveal dark />
+[Link to pen](https://codepen.io/sol0mka/pen/b37bb9c6dede99d0ac75d60b5fb0d43d)
+
 
 Now, let's finally compose these short scenes into one:
 
-    // pen id: 39427561a8a0b15d7896480a7d96d3d1" height="700
+<Codepen
+  title="mograph"
+  pen="RRRgLq"
+  user="sol0mka"
+/>
+[Link to pen](https://codepen.io/sol0mka/pen/RRRgLq)
 
-_You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo1) since the bundled Codepen code could be unreadable._
+_You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo1) since the bundled Codepen code ~~could be~~ **is** unreadable._
 
 #### Word reveal
 
-There is another demo that can set some light on the shape usage in motion graphics, it was made with bunch of shapes and few characters that compose a `love` word together:
+<DemoLove />
+[Link to pen](https://codepen.io/sol0mka/pen/c94452fb65dbf676b0ae8a12d4267473)
 
-    // pen id: c94452fb65dbf676b0ae8a12d4267473" height="700
 
 That's was the last demo for the mograph use cases, I hope you getting more convinced that shapes could be useful sometimes. Let's move on.
 
+## Inspiration
 There are also few gifs for your inspiration. All of them pretty much easy with `mojs` shapes:
-<More label="click here to see the gifs" classname=" is-border-bottom">  
-![Example gif](/assets/gifs/shape-mograph/blend_square.gif)  
-![Example gif](/assets/gifs/shape-mograph/random.gif)  
-![Example gif](/assets/gifs/shape-mograph/omam-logo-imprint.gif)  
-![Example gif](/assets/gifs/shape-mograph/number_1_jrcanest.gif)  
-![Example gif](/assets/gifs/shape-mograph/lookinside.gif)  
-![Example gif](/assets/gifs/shape-mograph/lukas_pink_loading.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-1.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-2.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-3.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-4.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-5.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-6.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-7.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-8.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-11.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-12.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-10.gif)  
-![Example gif](/assets/gifs/shape-mograph/shapes-9.gif)  
+<More label="Click here to see the gifs">
+  ![Example gif](/assets/gifs/shape-mograph/blend_square.gif)
+  ![Example gif](/assets/gifs/shape-mograph/random.gif)
+  ![Example gif](/assets/gifs/shape-mograph/omam-logo-imprint.gif)
+  ![Example gif](/assets/gifs/shape-mograph/number_1_jrcanest.gif)
+  ![Example gif](/assets/gifs/shape-mograph/lookinside.gif)
+  ![Example gif](/assets/gifs/shape-mograph/lukas_pink_loading.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-1.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-2.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-3.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-4.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-5.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-6.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-7.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-8.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-11.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-12.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-10.gif)
+  ![Example gif](/assets/gifs/shape-mograph/shapes-9.gif)
 </More>
 
 ## Animation Use Cases
-
 Animation is another field for Shapes application. You can compose some visual effects to support your main sequence, crafting more details and depth.
 
 I've made a little animation demo as a starting point to which we will apply some effects. 4 physical balls in a harsh living situation(x):
 
-    // pen id: 3fe5eabaf7cfb83142bbd1be3f2f2850
+<Codepen
+  title="shape-tutorial-animation-1"
+  pen="3fe5eabaf7cfb83142bbd1be3f2f2850"
+  user="sol0mka"
+/>
 
 _You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo2) since the bundled Codepen code could be unreadable._
 
@@ -1403,17 +1607,30 @@ The demo itself is a good illustration of how you can use shapes as "main actors
 
 For instance, you can add the effect of collision between balls with ease(x):
 
-    // pen id: 7315f4364360ec87a6655d33782702fe
+<Codepen
+  title="shape-tutorial-animation-2"
+  pen="7315f4364360ec87a6655d33782702fe"
+  user="sol0mka"
+/>
 
 _You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo2) since the bundled Codepen code could be unreadable._
 
 As you would expect, the effect itself was composed of bunch of shapes and swirls:
 
-    // pen id: c29f0b2ce24147e4886691b61b31b3fb
+<Codepen
+  title="shape-tutorial-animation-3"
+  pen="c29f0b2ce24147e4886691b61b31b3fb"
+  user="sol0mka"
+/>
+
 
 The next effect, you can add to the scene is the "motion trails" effect (x):
 
-    // pen id: 92f9a7b05498b8a0be3734737a9cfc70
+<Codepen
+  title="shape-tutorial-animation-4"
+  pen="92f9a7b05498b8a0be3734737a9cfc70"
+  user="sol0mka"
+/>
 
 _You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo2) since the bundled Codepen code could be unreadable._
 
@@ -1421,66 +1638,92 @@ Motion trail effect is usually used to exaggerate velocity of the object that mo
 
 There is another simple example with lines instead of curves:
 
-    // pen id: fff0bcc079e0448bd0a72ee311ebadfa
+<Codepen
+  title="shape-tutorial-animation-5"
+  pen="fff0bcc079e0448bd0a72ee311ebadfa"
+  user="sol0mka"
+/>
 
 The next effect that can fit this scene is the "dust trail" effect (x):
 
-    // pen id: 6f7b05a45679964ccdf9212fa68075c8
+<Codepen
+  title="shape-tutorial-animation-6"
+  pen="6f7b05a45679964ccdf9212fa68075c8"
+  user="sol0mka"
+/>
 
 _You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo2) since the bundled Codepen code could be unreadable._
 
 It was composed of bunch of swirls, let's spend some time and see how exactly you can build something like that. First, you want to make the swirls move downward, - somewhere into the ground:
 
-    // pen id: 80d765ff22ae515cb28a78c0ec5686c9
+<Codepen
+  title="shape-tutorial-animation-7"
+  pen="80d765ff22ae515cb28a78c0ec5686c9"
+  user="sol0mka"
+/>
 
 Then put these swirls inside `overflow: hidden` container to constrain the visible area:
 
-    // pen id: eb05789c56571993be7fb966b8b9207f
+<Codepen
+  title="shape-tutorial-animation-7"
+  pen="eb05789c56571993be7fb966b8b9207f"
+  user="sol0mka"
+/>
 
 As the last touch, you need to add 2 swirls that will fade upward at the end:
 
-    // pen id: 73dcc20f9e36c64e8d3b55d0188f016a
+<Codepen
+  title="shape-tutorial-animation-9"
+  pen="73dcc20f9e36c64e8d3b55d0188f016a"
+  user="sol0mka"
+/>
 
 To recap, there is the same exact effect with simple object:
 
-    // pen id: 633e6aa52d40691cca2f2cda91650bae
+<Codepen
+  title="shape-tutorial-animation-8"
+  pen="633e6aa52d40691cca2f2cda91650bae"
+  user="sol0mka"
+/>
 
 _Note: Again, this dust effect could be done with just one declarative call with `Burst` or `Stagger` modules that we will discuss shortly, but for now let's keep it `Swirl`._
 
 That's basically all for animation use cases. My effort in this section was focused to convey the idea of how you can use the shapes to enhance and support your main animation scenes, applying little effects and details.
 
+
 Just a few gifs for your inspiration:
-<More label="click here to see the gifs" classname=" is-border-bottom">  
-![Example gif](/assets/gifs/shape-animation/bens.gif)  
-![Example gif](/assets/gifs/shape-animation/galshir-candles.gif)  
-![Example gif](/assets/gifs/shape-animation/space-dog.gif)  
-![Example gif](/assets/gifs/shape-animation/galshir-coffee-machine.gif)  
-![Example gif](/assets/gifs/shape-animation/galshir.gif)  
-![Example gif](/assets/gifs/shape-animation/galshir-sharpener.gif)  
-![Example gif](/assets/gifs/shape-animation/galshir-toaster.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-9.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-11.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-20.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-2.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-6.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-8.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-10.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-111.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-12.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-16.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-21.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-24.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-25.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-28.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-31.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-32.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-36.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-38.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-39.gif)  
-![Example gif](/assets/gifs/shape-animation/rain_dribbble.gif)  
-![Example gif](/assets/gifs/shape-animation/sloth.gif)  
-![Example gif](/assets/gifs/shape-animation/LingoAsset-23.gif)  
+<More label="Click here to see the gifs">  
+  ![Example gif](/assets/gifs/shape-animation/bens.gif)  
+  ![Example gif](/assets/gifs/shape-animation/galshir-candles.gif)  
+  ![Example gif](/assets/gifs/shape-animation/space-dog.gif)  
+  ![Example gif](/assets/gifs/shape-animation/galshir-coffee-machine.gif)  
+  ![Example gif](/assets/gifs/shape-animation/galshir.gif)  
+  ![Example gif](/assets/gifs/shape-animation/galshir-sharpener.gif)  
+  ![Example gif](/assets/gifs/shape-animation/galshir-toaster.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-9.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-11.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-20.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-2.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-6.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-8.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-10.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-111.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-12.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-16.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-21.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-24.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-25.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-28.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-31.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-32.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-36.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-38.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-39.gif)  
+  ![Example gif](/assets/gifs/shape-animation/rain_dribbble.gif)  
+  ![Example gif](/assets/gifs/shape-animation/sloth.gif)  
+  ![Example gif](/assets/gifs/shape-animation/LingoAsset-23.gif)  
 </More>
+
 
 ## UI Use Cases
 
@@ -1492,126 +1735,198 @@ Usually motion in UI helps the user to catch a clue about position, purpose and 
 
 The next demo illustrates how the shapes can be used to appeal users' attention, providing them with feedback about availability of the control element in a playful way. There is a demo with two shapes that act in place of UI element:
 
-    // pen id: 3e7e766d0d5eaa3fa953c56c394bc1b5
+<Codepen
+  title="shape-tutorial-ui1"
+  pen="3e7e766d0d5eaa3fa953c56c394bc1b5"
+  user="sol0mka"
+/>
 
 Then you can add even more effects to the button to fit the mood of your current UIs, for instance "bubble UI":
 
-    // pen id: 97d57587438de4d1e8592304a961be84
+<Codepen
+  title="shape-tutorial-ui2"
+  pen="97d57587438de4d1e8592304a961be84"
+  user="sol0mka"
+/>
 
 If user will click the close button, we need to remove it, for that we can add a "bubbles fade out" effect to keep the "bubbles" pace:
 
-    // pen id: 181b4ba2ebb5a05d755647e9144a50d8
+<Codepen
+  title="shape-tutorial-ui3"
+  pen="181b4ba2ebb5a05d755647e9144a50d8"
+  user="sol0mka"
+/>
 
 This is how it will look like if we will connect these two transitions (click the close button):
 
-    // pen id: 3c49de2d7d0ca3e92bf5db5bf7a2687d
+<Codepen
+  title="shape-tutorial-ui4"
+  pen="3c49de2d7d0ca3e92bf5db5bf7a2687d"
+  user="sol0mka"
+/>
 
 That's the exact same effect I've used in Bubble Layout demo a while ago, when I was trying to convey the bubble interface (click on any circle to see the close button)(x):
 
-    // pen id: yNOage
+<Codepen
+  title="Bubble Layout"
+  pen="yNOage"
+  user="sol0mka"
+/>
 
 In this demo above you can notice two more effects that were made with shapes, - one is the subtle white ripple that spreads out when you click on any bubble (click somewhere to see):
 
-    // pen id: aa500ebd18bde6a4f67c31496eb4d095
+<Codepen
+  title="shape-tutorial-ui5"
+  pen="aa500ebd18bde6a4f67c31496eb4d095"
+  user="sol0mka"
+/>
 
 The second one is the white collision effect right under the project image box when it jumps over the screen:
 
-    // pen id: e5fe8c0a9a0a2b387cfa2858ea7e2046
+<Codepen
+  title="shape-tutorial-ui5"
+  pen="e5fe8c0a9a0a2b387cfa2858ea7e2046"
+  user="sol0mka"
+/>
 
 ### Micro Interactions
 
 Since the shapes are tuneable, you can add effects to you UI regarding user interactions (hover over the links to see):
 
-    // pen id: a46534d118a64d2450e6a0e8e93541fd
+<Codepen
+  title="shape-tutorial-ui6"
+  pen="a46534d118a64d2450e6a0e8e93541fd"
+  user="sol0mka"
+/>
 
 Another demo for micro interactions is the pointer ripple, the effect that spreads out after a user clicks any touchable surface. The `mojs-player` itself has a lot of those so I will put an empty player as demo (click on player controls to see):
 
-    // pen id: 249b42683dfa4b7a11f641e842270427" height="200
+<Codepen
+  title="MojsPlayer"
+  pen="249b42683dfa4b7a11f641e842270427"
+  user="sol0mka"
+/>
 
 That's basically exact the same principle we have used in this tune demo (click somewhere to see):
 
-    // pen id: fcf6121653db713d8567271d3e8eea10" height="200
+<Codepen
+  title="Simple Ripple"
+  pen="fcf6121653db713d8567271d3e8eea10"
+  user="sol0mka"
+/>
 
 ### Love/Hate Modal
 
 OK. Let's do another demo with shapes regarding UI. This time, we will have a plus button, it will show up from bottom left, after it will stop - we will mimic button push transition by adding the concurrent rotation of the button. By that we will imitate "let's go/follow me" gesture, inviting user to follow up with a click:
 
-    // pen id: 1f6cce8046f76ca43aca3a5ac681b97c
+<Codepen
+  title="shape-tutorial-ui7"
+  pen="1f6cce8046f76ca43aca3a5ac681b97c"
+  user="sol0mka"
+/>
 
 Then we can expand the button sequence even more to add some playful splash effect:
 
-    // pen id: 51350c86ef0e0fb722e034006fcafb8f
+<Codepen
+  title="shape-tutorial-ui8"
+  pen="51350c86ef0e0fb722e034006fcafb8f"
+  user="sol0mka"
+/>
 
 Then, if user doesn't click the button for a while, let's invite him to proceed by adding the callout vibration, to mime an incoming call:
 
-    // pen id: 9935b7cec036eae2ddb762213ceae6d4
+<Codepen
+  title="shape-tutorial-ui9"
+  pen="9935b7cec036eae2ddb762213ceae6d4"
+  user="sol0mka"
+/>
 
 When the user eventually will click the button, we will show the quiz modal with the most valuable question we have ever had. That's how the modal will look like:
 
-    // pen id: 2c95e0397b0d20eb4fbc952e3c5f0fe0
+<Codepen
+  title="shape-tutorial-ui10"
+  pen="2c95e0397b0d20eb4fbc952e3c5f0fe0"
+  user="sol0mka"
+/>
 
 Every piece of this sequence above is composed of shapes - ripple inside a modal, few details in the top and bottom right corners, background spread effect, modal shape itself and its corner are shapes too.
 
 Now when the user hovers over any button, we need to show some tension, conveying that something is going to happen if he will proceed with a click (hover over buttons to see):
 
-    // pen id: ad612440c8b08d0b506e0a8cb4152b9c
+<Codepen
+  title="shape-tutorial-ui11"
+  pen="ad612440c8b08d0b506e0a8cb4152b9c"
+  user="sol0mka"
+/>
 
 The extend parts of inflating modal are nothing than plain shapes, in fact - `curve`s that just get scaled when the user hovers over the buttons. I've set the modal shape to disappear to reveal the extending parts so it will be clear for you what I mean (hover over buttons):
 
-    // pen id: 4b54df04faa5b6c885a7b0222c842b5d
+<Codepen
+  title="shape-tutorial-ui11"
+  pen="4b54df04faa5b6c885a7b0222c842b5d"
+  user="sol0mka"
+/>
 
 As you can see now - the extending parts are just `curves` on each side of the modal. They get larger when user hovers over the buttons.
 
 Next, if user leaves the button with his pointer, we need to show the tension relief by mimicking the air currents that float out of the modal, just a few swirls would do here (hover over buttons and then release to see):
 
-    // pen id: fcc29bcf5d0eebf37d558864b7a2e334
+<Codepen
+  title="shape-tutorial-ui13"
+  pen="fcc29bcf5d0eebf37d558864b7a2e334"
+  user="sol0mka"
+/>
 
 In the other case, when the user finally proceeds with the button click, we will blow up the modal as a consequence of the modal's tension and show the chosen word. That's the entire sequence (x):
 
-```js
-pen id: 812699ce32c9a7aeb70c9384b32a533a
-```
+<Codepen
+  title="Love or Hate?"
+  pen="812699ce32c9a7aeb70c9384b32a533a"
+  user="sol0mka"
+/>
 
 _You can find the entire source code in [this repo](https://github.com/legomushroom/shape-demo3) since the bundled Codepen code could be unreadable._
 
 There are few gifs for your inspiration over the UI's and shapes:
 
-<More label="click here to see the gifs" classname=" is-border-bottom">  
-![Example gif](/assets/gifs/shape-ui/upload.gif)  
-![Example gif](/assets/gifs/shape-ui/awsm.gif)  
-![Example gif](/assets/gifs/shape-ui/checkbox.gif)  
-![Example gif](/assets/gifs/shape-ui/download.gif)  
-![Example gif](/assets/gifs/shape-ui/circle-menu-github-open-source-ramotion.gif)  
-![Example gif](/assets/gifs/shape-ui/close.gif)  
-![Example gif](/assets/gifs/shape-ui/dailyui-049.gif)  
-![Example gif](/assets/gifs/shape-ui/download2.gif)  
-![Example gif](/assets/gifs/shape-ui/dribbble_hex-nav.gif)  
-![Example gif](/assets/gifs/shape-ui/dribbble-morph.gif)  
-![Example gif](/assets/gifs/shape-ui/ezgif.com-gif-maker__2_.gif)  
-![Example gif](/assets/gifs/shape-ui/ezgif.com-gif-maker__5_.gif)  
-![Example gif](/assets/gifs/shape-ui/fab-animation.gif)  
-![Example gif](/assets/gifs/shape-ui/finalshot.gif)  
-![Example gif](/assets/gifs/shape-ui/hp_dribbble_2.gif)  
-![Example gif](/assets/gifs/shape-ui/IMG_1171.gif)  
-![Example gif](/assets/gifs/shape-ui/inboxui.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-1.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-2.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-3.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-4.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-5.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-6.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-7.gif)  
-![Example gif](/assets/gifs/shape-ui/LingoAsset-8.gif)  
-![Example gif](/assets/gifs/shape-ui/pause-push-2.gif)  
-![Example gif](/assets/gifs/shape-ui/right_and_wrong.gif)  
-![Example gif](/assets/gifs/shape-ui/search_3.gif)  
-![Example gif](/assets/gifs/shape-ui/share.gif)  
-![Example gif](/assets/gifs/shape-ui/time-marine-hud.gif)  
-![Example gif](/assets/gifs/shape-ui/touch-me-mb.gif)  
-![Example gif](/assets/gifs/shape-ui/anim.gif)  
+<More label="Click here to see the gifs">
+  ![Example gif](/assets/gifs/shape-ui/upload.gif)
+  ![Example gif](/assets/gifs/shape-ui/awsm.gif)
+  ![Example gif](/assets/gifs/shape-ui/checkbox.gif)
+  ![Example gif](/assets/gifs/shape-ui/download.gif)
+  ![Example gif](/assets/gifs/shape-ui/circle-menu-github-open-source-ramotion.gif)
+  ![Example gif](/assets/gifs/shape-ui/close.gif)
+  ![Example gif](/assets/gifs/shape-ui/dailyui-049.gif)
+  ![Example gif](/assets/gifs/shape-ui/download2.gif)
+  ![Example gif](/assets/gifs/shape-ui/dribbble_hex-nav.gif)
+  ![Example gif](/assets/gifs/shape-ui/dribbble-morph.gif)
+  ![Example gif](/assets/gifs/shape-ui/ezgif.com-gif-maker2.gif)
+  ![Example gif](/assets/gifs/shape-ui/ezgif.com-gif-maker5.gif)
+  ![Example gif](/assets/gifs/shape-ui/fab-animation.gif)
+  ![Example gif](/assets/gifs/shape-ui/finalshot.gif)
+  ![Example gif](/assets/gifs/shape-ui/hp_dribbble_2.gif)
+  ![Example gif](/assets/gifs/shape-ui/IMG_1171.gif)
+  ![Example gif](/assets/gifs/shape-ui/inboxui.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-1.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-2.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-3.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-4.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-5.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-6.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-7.gif)
+  ![Example gif](/assets/gifs/shape-ui/LingoAsset-8.gif)
+  ![Example gif](/assets/gifs/shape-ui/pause-push2.gif)
+  ![Example gif](/assets/gifs/shape-ui/right-and-wrong.gif)
+  ![Example gif](/assets/gifs/shape-ui/search_3.gif)
+  ![Example gif](/assets/gifs/shape-ui/share.gif)
+  ![Example gif](/assets/gifs/shape-ui/time-marine-hud.gif)
+  ![Example gif](/assets/gifs/shape-ui/anim.gif)
+
 </More>
 
-## Recap
+
+
+## It's a wrap!
 
 Phew, that was intense. I hope you didn't get bored. We have touched only the surface of possible use cases in this post but I hope it puts some light on why and when you can use shapes. At this point it's probably clear that to create a shape you use a declarative call and the shape appears in any place of the screen (or HTMLElement) you want without any bootstrapping. You can use `then` method to chain states of shape and `tune` them afterward or even re`generate` all random properties on it before starting the animation. Remember that shapes obey the `tweenable` interface thus it has tween properties, callbacks and public methods that any `tween` has.
 
@@ -1619,8 +1934,6 @@ Need to admit that this post was written as an introduction to more complex and 
 
 ## Thank you!
 
-I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter ([@legomushroom](https://twitter.com/legomushroom)), ask a question on StackOverflow with `#mojs` tag, rise an issue on [GitHub repo](https://github.com/legomushroom/mojs) or leave a comment in the section below. You can help the project on [Patreon](https://patreon.com/user?u=3219311&utm_medium=social&utm_source=twitter&utm_campaign=creatorshare) (project does need help) and/or on [GitHub](https://github.com/legomushroom/mojs/). {'Love <3.'}
+I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter ([@legomushroom](https://twitter.com/legomushroom)), ask a question on StackOverflow with `#mojs` tag, rise an issue on [GitHub repo](https://github.com/mojs/mojs) or join our [Slack Community](https://mojs.slack.com/). You can help the project on [GitHub](https://github.com/legomushroom/mojs/). {'Love <3.'}
 
-Kudos to [Jonas Sandstedt](https://twitter.com/jonassandstedt) for his help in proof reading this tutorial!
-
--->
+Kudos to [Jonas Sandstedt](https://twitter.com/jonassandstedt) for his help in rewriting and proof reading this tutorial!

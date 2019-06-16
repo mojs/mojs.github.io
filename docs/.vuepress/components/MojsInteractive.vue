@@ -40,9 +40,10 @@ or if you wanna declare a height or a controller:
         <button class="button" v-on:click="updateCode">Update code</button>
       </div>
     </div>
+    <p v-if="notice" class="mojs-interactive__clicknotice">{{this.notice}}</p>
     <div
       :id="this.id"
-      class="mojs-interactive__result"
+      :class="'mojs-interactive__result ' + (dark ? 'mojs-interactive__result--dark' : '')"
       :style="style"
     >
       <button class="button button--icon button--control" v-if="!controller" v-on:click="playPause" :aria-label="isPlaying ? 'Pause animation' : 'Play animation'">{{isPlaying ? '⑊' : '︎︎︎▶︎'}}</button>
@@ -66,6 +67,8 @@ or if you wanna declare a height or a controller:
       controller: { type: [String, Boolean], default: false },
       height: { type: String, default: '300px' },
       code: { type: String, default: '' },
+      dark: { type: Boolean, default: false },
+      notice: { type: [String, Boolean], default: false }, // to show a "click somewhere to activate animation" text
     },
 
     data: function () {
@@ -88,6 +91,7 @@ or if you wanna declare a height or a controller:
       },
 
       handleCode: function(code) {
+
         if (!window) return; // For SSR
         
         // Do some cleaning
@@ -173,62 +177,5 @@ or if you wanna declare a height or a controller:
 </script>
 
 <style>
-.mojs-interactive__code {
-  position: relative;
-  padding-bottom: 1.2em;
-}
-.mojs-interactive__code .buttons {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-}
-/* TODO: Add the pinned to the container, co both the code and the code exmple can be side by side. 
-  And add a placeholder block where the old elements had been so the text doesnt jump.
- */
-.mojs-interactive__code.mojs-interactive__code--pinned {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 200;
-  background: #2b062a;
-}
-.mojs-interactive__code.mojs-interactive__code--pinned .prism-editor-wrapper {
-  max-height: 50vh;
-  overflow: auto;
-}
-.mojs-interactive__code .button--pin {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.mojs-interactive__result {
-  position: relative;
-}
-.mojs-interactive__result .button--control {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-.mojs-interactive__result {
-  background: #f1e2d7;
-  width: 100%;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-.mojs-interactive__result svg {
-  overflow: visible
-}
-
-.mojs-interactive__controller {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.mojs-interactive__controller .controller {
-  position: absolute;
-}
+/* Style is in global style, index.styl */
 </style>

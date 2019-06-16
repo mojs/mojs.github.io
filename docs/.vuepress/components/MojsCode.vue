@@ -77,26 +77,3 @@ new mojs.Shape({
     }
   }
 </script>
-
-<style lang="stylus">
-.mojs-interactive__result {
-  position: relative
-}
-.mojs-interactive__result {
-  background: #f1e2d7
-  width: 100%
-  height: 400px
-  position: relative
-  overflow: hidden
-}
-.mojs-interactive__result svg {
-  overflow: visible
-}
-.mojs-interactive__clicknotice {
-  font-size: 0.85em
-  color: $c-white
-  background: $c-purple-light
-  padding: $s-small $s-large
-  margin: 0
-}
-</style>
