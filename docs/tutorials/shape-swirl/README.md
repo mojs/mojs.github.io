@@ -1,12 +1,8 @@
-
----
-author: legomushroom
----
-
 # Shape & ShapeSwirl
 
 This post is about Shape and ShapeSwirl - modules that help you to bootstrap motion effects.
 - [API reference](/api/shape-swirl)
+#### Author: [legomushroom](https://github.com/legomushroom/)
 
 * * *
 
