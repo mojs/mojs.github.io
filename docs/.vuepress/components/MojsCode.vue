@@ -1,4 +1,7 @@
 /*
+A simplified version of MojsInteractive that cant be edited,
+but has more flexibility regarding the code.
+
 Usage:
 <MojsCode
   id="unique_id"
@@ -24,6 +27,7 @@ new mojs.Shape({
     <div class="mojs-interactive__code">
       <slot></slot>
     </div>
+    <p v-if="notice" class="mojs-interactive__clicknotice">{{this.notice}}</p>
     <div :id="this.id" class="mojs-interactive__result" :class="this.className" :style="style">
       <div v-if="controller" :id="this.id + '_controller'" class="mojs-interactive__controller"></div>
     </div>
@@ -40,6 +44,7 @@ new mojs.Shape({
       height: { type: String, default: '300px' },
       code: { type: [String, Boolean], default: '' },
       className: { type: String, default: '' },
+      notice: { type: [String, Boolean], default: false }, // to show a "click somewhere to activate animation" text
     },
 
     computed: {
@@ -73,18 +78,25 @@ new mojs.Shape({
   }
 </script>
 
-<style>
+<style lang="stylus">
 .mojs-interactive__result {
-  position: relative;
+  position: relative
 }
 .mojs-interactive__result {
-  background: #f1e2d7;
-  width: 100%;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
+  background: #f1e2d7
+  width: 100%
+  height: 400px
+  position: relative
+  overflow: hidden
 }
 .mojs-interactive__result svg {
   overflow: visible
+}
+.mojs-interactive__clicknotice {
+  font-size: 0.85em
+  color: $c-white
+  background: $c-purple-light
+  padding: $s-small $s-large
+  margin: 0
 }
 </style>
