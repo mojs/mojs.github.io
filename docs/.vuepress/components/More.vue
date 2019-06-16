@@ -1,37 +1,61 @@
-// TODO: create an expandable componenent but a button to expand that takes the prop label
+/**
+Usage:
+<More label="Click here to see the gifs">
+  Content
+</More>
+
+TODO: Add aria roles, or try make vue-badger-accordion work within vuepress
+*/
 <template>
-  <badger-accordion>
-    <badger-accordion-item>
-      <template slot="header">{{label}}</template>    
-      <template slot="content"><slot></slot></template>  
-    </badger-accordion-item>
-  </badger-accordion>
+  <div class="accordion">
+    <button v-on:click="toggleAccordeon" class="accordion__header">
+      {{open ? 'Close' : label }}
+      <span>{{open ? '–' : '+'}}</span>
+    </button>
+
+    <div v-if="open" class="accordion__panel">
+      <slot></slot>
+    </div>
+  </div>
 </template>
 
 <script>
-  import {BadgerAccordion, BadgerAccordionItem} from 'vue-badger-accordion';
 
   export default {
-    components: {
-        BadgerAccordion,
-        BadgerAccordionItem
+
+    data: function () {
+      return {
+        open: false
+      }
     },
-    
+
     props: {
       label: { type: String, default: 'Expand to see more' },
-    }
+    },
 
+    methods: {
+      toggleAccordeon: function () {
+        this.open = !this.open
+      }
+    }
   }
 </script>
 
 <style lang="stylus">
-  .badger-accordion__header {
+  .accordion__header {
+    display: flex
+    justify-content: space-between
+    border: none
     background: $c-purple-light
     color: $c-white
     padding: $s-small $s-medium
-    font-weight: bold;
+    font-weight: bold
+    font-size: 1em
+    width: 100%
+    text-align: left
+    cursor: pointer
   }
-  .badger-accordion__panel {
+  .accordion__panel {
     margin: 0
   }
 </style>
