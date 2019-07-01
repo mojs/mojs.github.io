@@ -47,6 +47,7 @@ Obviously, you can style the shape as you want (play around with the different p
 
 <MojsInteractive
   id="circle"
+  :playbutton=false
   code=
 "new mojs.Shape({
   parent:       '#circle',
@@ -72,6 +73,7 @@ Numeric properties may be unit based (like `top`/`left` below) or can be express
 
 <MojsInteractive
   id="values"
+  :playbutton=false
   code=
 "new mojs.Shape({
   parent:       '#values',
@@ -96,6 +98,7 @@ The `radius` property sets shape's (no prizes for guessing) radius. Also, you ca
 
 <MojsInteractive
   id="radius_example"
+  :playbutton=false
   code=
 "new mojs.Shape({
   parent:       '#radius_example',
@@ -266,6 +269,7 @@ To keep the `APIs` declarative, `mojs` uses `delta` objects to describe transiti
 
 <MojsInteractive
   id="delta"
+  :playbutton=false
   code=
 "new mojs.Shape({
   parent:       '#delta',
