@@ -25,7 +25,7 @@
     },
 
     mounted: function () {
-      import("mo-js").then(module => {
+      import("@mojs/core").then(module => {
         import("mojs-player").then(module => {
 
           /* ADD CUSTOM SHAPE */

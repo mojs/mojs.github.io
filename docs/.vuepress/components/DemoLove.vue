@@ -44,7 +44,7 @@
     },
 
     mounted: function () {
-      import("mo-js").then(module => {
+      import("@mojs/core").then(module => {
         import('mojs-player').then(module => {
           const parent = document.getElementById('demo-love');
       

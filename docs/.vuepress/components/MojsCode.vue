@@ -69,7 +69,7 @@ new mojs.Shape({
     },
 
     mounted () {
-      import('mo-js').then(module => {
+      import('@mojs/core').then(module => {
         import('mojs-player').then(module => {
           this.handleCode(this.code);
         });
