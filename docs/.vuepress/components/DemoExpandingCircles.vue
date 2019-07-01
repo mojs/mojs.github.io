@@ -41,7 +41,7 @@
       motionQuery.addListener(handleReduceMotionChanged);
       handleReduceMotionChanged(); // trigger once on load to check initial value
 
-      import("mo-js").then(module => {
+      import("@mojs/core").then(module => {
         import('mojs-player').then(module => {
 
 

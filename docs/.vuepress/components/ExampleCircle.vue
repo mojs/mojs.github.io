@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import mojs from 'mo-js';
+  import mojs from '@mojs/core';
 
   export default {
 

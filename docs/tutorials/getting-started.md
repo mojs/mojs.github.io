@@ -2,8 +2,8 @@
 # Getting started
 
 ## Setup mo.js in your project
-- Run `npm i mo-js` OR `yarn add mo-js`
-- Import it `import mojs from 'mo-js'`
+- Run `npm i @mojs/core` OR `yarn add @mojs/core`
+- Import it `import mojs from '@mojs/core'`
 
   Or use the minified CDN version:
   ```js
