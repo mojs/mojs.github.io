@@ -11,8 +11,8 @@
   export default {
 
     mounted: function () {
-      import("@mojs/core").then(module => {
-        import('mojs-player').then(module => {
+      import('@mojs/core').then(module => {
+        import('@mojs/player').then(module => {
           const COLORS = {
             white:   '#ffffff',
             black:   '#000000',
@@ -113,8 +113,8 @@
               [ support1, support2 ]
             );
 
-          
-          const parentDOM = document.getElementById('demo-elegant-triangles_controller');         
+
+          const parentDOM = document.getElementById('demo-elegant-triangles_controller');
           new MojsPlayer({
             add: timeline,
             isPlaying: false,

@@ -11,8 +11,8 @@
   export default {
 
     mounted: function () {
-      import("@mojs/core").then(module => {
-        import('mojs-player').then(module => {
+      import('@mojs/core').then(module => {
+        import('@mojs/player').then(module => {
           const COLORS = {
             white:   '#ffffff',
             black:   '#000000',
@@ -77,7 +77,7 @@
             fill:         'none',
             stroke:       COLORS.cyan,
             strokeWidth:  3,
-            strokeDasharray:  {'50% 100%' : '0% 100%'}, 
+            strokeDasharray:  {'50% 100%' : '0% 100%'},
             strokeDashoffset: { '50%' : '-66%' },
             y: y
           };
@@ -109,8 +109,8 @@
           timeline
             .add( triangle1, triangle2, triangle3 )
             .add( trangleLine1, trangleLine2, trangleLine3 );
-          
-          const parentDOM = document.getElementById('demo-triangles_controller');         
+
+          const parentDOM = document.getElementById('demo-triangles_controller');
           new MojsPlayer({
             add: timeline,
             isPlaying: false,
