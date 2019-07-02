@@ -7,7 +7,7 @@
 
   Or use the minified CDN version:
   ```js
-  <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
   ```
 
 - Create your animations. What about a bouncy circle?
