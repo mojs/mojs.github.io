@@ -74,7 +74,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
     components: {
       PrismEditor
     },
-    
+
     props: {
       id: { type: String, default: 'code_example' }, // A unique ID
       controller: { type: [String, Boolean], default: false }, // this will create a mojs.Player controller
@@ -114,7 +114,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
         if (window['demo_' + this.id]) { // the mojs animation element
           window['demo_' + this.id].stop();
           window['demo_' + this.id].el.remove(); // remove the DOM node
-          delete window['demo_' + this.id]; 
+          delete window['demo_' + this.id];
         }
         // Remove and delete previous instance of player: mojsPlayer_', this.id
         if (window['mojsPlayer_' + this.id]) { // the mojs player element
@@ -126,7 +126,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
         const func = new Function('window["demo_' + this.id + '"] = ' + code);
         try {
           func();
-          if (!this.controller && this.playbutton) {            
+          if (!this.controller && this.playbutton) {
             this.timeline = new mojs.Timeline({
               onPlaybackComplete: () => {
                 this.isPlaying = false;
@@ -139,7 +139,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
             if (play) {
               this.timeline.play();
               this.isPlaying = true;
-            }            
+            }
           }
         }
         catch(error) {
@@ -148,7 +148,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
 
         // Set the prop :controller=true to include a mojs player
         if (this.controller && window['demo_' + this.id]) {
-          const parentDOM = document.getElementById(this.id + '_controller');              
+          const parentDOM = document.getElementById(this.id + '_controller');
           // Create a global mojs player instance
           window['mojsPlayer_' + this.id] = new MojsPlayer({
             add: window['demo_' + this.id],
@@ -187,7 +187,7 @@ or with no controlls at all (static animation, unless you provide a .play() func
 
     mounted () {
       import('@mojs/core').then(module => {
-        import('mojs-player').then(module => {
+        import('@mojs/player').then(module => {
           this.handleCode(this.code);
         });
       });

@@ -11,8 +11,8 @@
   export default {
 
     mounted: function () {
-      import("@mojs/core").then(module => {
-        import('mojs-player').then(module => {
+      import('@mojs/core').then(module => {
+        import('@mojs/player').then(module => {
           const COLORS = {
             white:   '#ffffff',
             black:   '#000000',
@@ -101,8 +101,8 @@
               sparks3,
               sparks4
             );
-          
-          const parentDOM = document.getElementById('demo-funky-square_controller');         
+
+          const parentDOM = document.getElementById('demo-funky-square_controller');
           new MojsPlayer({
             add: timeline,
             isPlaying: false,

@@ -37,7 +37,7 @@ new mojs.Shape({
 <script>
   export default {
     name: 'MojsCode',
-    
+
     props: {
       id: { type: String, default: 'code_example' },
       controller: { type: [String, Boolean], default: false },
@@ -70,7 +70,7 @@ new mojs.Shape({
 
     mounted () {
       import('@mojs/core').then(module => {
-        import('mojs-player').then(module => {
+        import('@mojs/player').then(module => {
           this.handleCode(this.code);
         });
       });

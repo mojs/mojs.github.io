@@ -22,8 +22,8 @@ Usage:
     },
 
     mounted: function () {
-      import("@mojs/core").then(module => {
-        import('mojs-player').then(module => {
+      import('@mojs/core').then(module => {
+        import('@mojs/player').then(module => {
           const COLORS = {
             white:   '#ffffff',
             black:   '#000000',
@@ -113,7 +113,7 @@ Usage:
           }).then(CHAR_HIDE_THEN);
 
           const oCharacter = new mojs.Shape({
-            ...CHAR_OPTS, 
+            ...CHAR_OPTS,
             shape:        'circle',
             fill:         'none',
             left:         2*leftStep + '%',
@@ -291,7 +291,7 @@ Usage:
             onUpdate (p) {
               var shiftP = mojs.easing.cubic.in( p );
               var scaleP = mojs.easing.quad.in( p );
-              
+
               mojs.h.setPrefixedStyle( logo, 'transform',
                 `translate(0px, ${ yShift*shiftP }px)
                 scaleY(${ 1 + 25*scaleP })`
@@ -317,8 +317,8 @@ Usage:
             shapes,
             logoShift
           );
-        
-          const parentDOM = document.getElementById('demo-mojs-logo-reveal_controller');         
+
+          const parentDOM = document.getElementById('demo-mojs-logo-reveal_controller');
 
           new MojsPlayer({
             add: timeline,

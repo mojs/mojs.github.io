@@ -41,8 +41,8 @@
       motionQuery.addListener(handleReduceMotionChanged);
       handleReduceMotionChanged(); // trigger once on load to check initial value
 
-      import("@mojs/core").then(module => {
-        import('mojs-player').then(module => {
+      import('@mojs/core').then(module => {
+        import('@mojs/player').then(module => {
 
 
           const COLORS = {
@@ -165,7 +165,7 @@
             line1, line2
             );
 
-          const parentDOM = document.getElementById('demo-expanding-circle_controller');         
+          const parentDOM = document.getElementById('demo-expanding-circle_controller');
           new MojsPlayer({
             add: this.timeline,
             isPlaying: false,
