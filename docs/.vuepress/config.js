@@ -41,7 +41,15 @@ module.exports = {
           '/tutorials/shape-swirl/',
         ]
       },
-      '/tools/',
+      {
+        title: 'Tools',
+        children: [
+          '/tools/',
+          '/tools/player/',
+          '/tools/curve-editor/',
+          '/tools/timeline-editor/',
+        ]
+      },
       {
         title: 'API',
         sidebarDepth: 2,
