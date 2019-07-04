@@ -7,8 +7,8 @@
 GUI player to control your animations-
 
 ### Usage
-- Install it: `npm i @mojs/mojs-player -D`
-- Import it: `import MojsPlayer from 'mojs-player';` or <br>
+- Install it: `npm i @mojs/player`
+- Import it: `import MojsPlayer from '@mojs/player';` or <br>
   `var MojsPlayer = require('mojs-player');`
 - Use it:
   1. Create a [tween](/api/tweens/tween.md) or a [timeline](/api/tweens/timeline.md)
@@ -26,8 +26,8 @@ For shotcuts and more options, [read more here](https://github.com/mojs/mojs-pla
 GUI for live easing/property curves editing
 
 ### Usage
-- Install it: `npm i @mojs/mojs-curve-editor -D`
-- Import it: `import MojsCurveEditor from 'mojs-curve-editor';`
+- Install it: `npm i @mojs/curve-editor`
+- Import it: `import MojsCurveEditor from '@mojs/curve-editor';`
 - Use it:
 ```js
 const mojsCurve = new MojsCurveEditor();
@@ -49,8 +49,8 @@ MojsTimelineEditor is a GUI plugin for interactive `html`/`custom points`/`timel
 ::: warning
 This tool is a work in progress. The description below may not be correct.
 :::
-- Install it: `npm i @mojs/mojs-timeline-editor -D` (Note: this is currently not on NPM)
-- Import it: `import MojsTimelineEditor from 'mojs-timeline-editor';`
+- Install it: `npm i @mojs/timeline-editor` (Note: this is currently not on NPM)
+- Import it: `import MojsTimelineEditor from '@mojs/timeline-editor';`
 - Use it:
   ```js
     const mojsTimelineEditor = new MojsTimelineEditor();
