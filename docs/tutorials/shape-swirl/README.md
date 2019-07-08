@@ -802,11 +802,10 @@ const circle2 = new mojs.Shape({
 });
 
 parentDOM.addEventListener( 'click', function (e) {
-  console.log('e.offsetX', e.offsetX);
-   circle1
+  circle1
     .tune({ x: e.offsetX, y: e.offsetY  })
     .replay();
-  
+
   circle2
     .tune({ x: e.offsetX, y: e.offsetY  })
     .replay();

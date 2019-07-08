@@ -39,6 +39,7 @@ module.exports = {
           '/tutorials/',
           '/tutorials/getting-started.md',
           '/tutorials/shape-swirl/',
+          '/tutorials/burst/',
         ]
       },
       {
