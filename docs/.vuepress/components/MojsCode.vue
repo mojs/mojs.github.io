@@ -1,11 +1,12 @@
 /*
-A simplified version of MojsInteractive that cant be edited,
+A simplified version of MojsInteractive that can't be edited,
 but has more flexibility regarding the code.
 
 Usage:
 <MojsCode
   id="unique_id"
   height="200px"
+  :dark="true"
   code=
 "new mojs.Shape({
   parent:       '#unique_id',
@@ -28,7 +29,7 @@ new mojs.Shape({
       <slot></slot>
     </div>
     <p v-if="notice" class="mojs-interactive__clicknotice">{{this.notice}}</p>
-    <div :id="this.id" class="mojs-interactive__result" :class="this.className" :style="style">
+    <div :id="this.id" :class="'mojs-interactive__result ' + (dark ? 'mojs-interactive__result--dark' : '')" :style="style">
       <div v-if="controller" :id="this.id + '_controller'" class="mojs-interactive__controller"></div>
     </div>
   </div>
@@ -43,7 +44,7 @@ new mojs.Shape({
       controller: { type: [String, Boolean], default: false },
       height: { type: String, default: '300px' },
       code: { type: [String, Boolean], default: '' },
-      className: { type: String, default: '' },
+      dark: { type: Boolean, default: false }, // if you want the demo to be dark 🕶
       notice: { type: [String, Boolean], default: false }, // to show a "click somewhere to activate animation" text
     },
 
