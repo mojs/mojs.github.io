@@ -26,7 +26,7 @@
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "node-sass": "^4.13.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^8.0.0",
     "vuepress": "^1.2.0"
   },
   "deploy": "npm run build",
