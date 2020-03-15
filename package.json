@@ -34,6 +34,6 @@
     "@mojs/core": "^0.288.2",
     "@mojs/curve-editor": "^1.5.0",
     "@mojs/player": "^0.43.16",
-    "vue-prism-editor": "^0.3.0"
+    "vue-prism-editor": "^0.5.1"
   }
 }
