@@ -9,6 +9,7 @@ Website for mo · js with tutorials and documentation.
 
 ## Deploy
 * Run `npm run build`
+* Try the build using `npx serve docs/.vuepress/dist`
 * Push to the mojs.github.io master branch using `. deploy.sh`
 
 ## Tips for docs writers
