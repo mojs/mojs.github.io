@@ -47,7 +47,7 @@ Obviously, you can style the shape as you want (play around with the different p
 
 <MojsInteractive
   id="circle"
-  :playbutton=false
+  :controller=false
   code=
 "new mojs.Shape({
   parent:       '#circle',
@@ -73,7 +73,7 @@ Numeric properties may be unit based (like `top`/`left` below) or can be express
 
 <MojsInteractive
   id="values"
-  :playbutton=false
+  :controller=false
   code=
 "new mojs.Shape({
   parent:       '#values',
@@ -98,7 +98,7 @@ The `radius` property sets shape's (no prizes for guessing) radius. Also, you ca
 
 <MojsInteractive
   id="radius_example"
-  :playbutton=false
+  :controller=false
   code=
 "new mojs.Shape({
   parent:       '#radius_example',
@@ -269,7 +269,6 @@ To keep the `APIs` declarative, `mojs` uses `delta` objects to describe transiti
 
 <MojsInteractive
   id="delta"
-  :playbutton=false
   code=
 "new mojs.Shape({
   parent:       '#delta',
@@ -279,7 +278,7 @@ To keep the `APIs` declarative, `mojs` uses `delta` objects to describe transiti
   duration:      1000,
   delay:         1000,
   easing:        'cubic.out',
-  repeat:        999
+  repeat:        2
 }).play();"
 />
 
@@ -424,7 +423,7 @@ Delta can also have its own explicit `easing` field that can hold any `mojs` <a 
   fill:         { 'cyan': 'yellow', easing: 'cubic.in' },
 
   duration:     2000,
-  repeat:       999,
+  repeat:       2,
 })"
 />
 
@@ -508,7 +507,6 @@ You can chain shape states with `then` calls (hit play button to see):
 
 <MojsInteractive
   id="then"
-  :controller=true
   code=
 "new mojs.Shape({
   parent:       '#then',
@@ -657,7 +655,6 @@ Also implementing `tweenable` interface means that any `Shape` can be `add`ed or
 
 <MojsCode
   id="pen_72e333584c53191806ec7ecb5bce1630"
-  :controller=true
   code=
 "
 const OPTS = {
@@ -743,7 +740,6 @@ timeline
    .play();
 
 const parentDOM = document.getElementById('pen_72e333584c53191806ec7ecb5bce1630_controller');             
-
 // Create a global mojs player instance
 new MojsPlayer({
   add: timeline,
@@ -884,7 +880,6 @@ const circplePurple = new mojs.Shape({
 });
 
 parentDOM.addEventListener( 'click', function (e) {
-  console.log(e);
   circle1.replay();
   
   circle2
@@ -1527,7 +1522,7 @@ After that we need a nice transition between screens, just a few circles will do
 [Link to pen](https://codepen.io/sol0mka/pen/95a862f1ad8445134466ad7d64213d46)
 
 ::: warning Accessibility warning
-When making fullscreen transitions, make sure to include a chech for if the user preferes reduced motion. We don't wanna trigger a migrane attack for our user. For example, you can play the animation from the end instead of frame 0, to ensure the last frame will be visible (like we do in this example when you press the play button here and has reduced motion set in your computers preferences):
+When making fullscreen transitions, make sure to include a chech for if the user preferes reduced motion. We don't wanna trigger a migrane attack for our user. For example, you can play the animation from the end instead of frame 0, to ensure the last frame will be visible:
 
 ```js
 let prefersReducedMotion = false;

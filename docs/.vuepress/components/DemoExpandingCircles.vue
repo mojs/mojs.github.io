@@ -3,7 +3,6 @@
   <div class="mojs-interactive">
     <slot></slot>
     <div class="mojs-interactive__result" id="demo-expanding-circle" style="background: rgb(241, 226, 215); height: 600px">
-      <button class="button button--icon button--control" v-on:click="playPause" :aria-label="isPlaying ? 'Pause animation' : 'Play animation'">{{isPlaying ? '⇤' : '︎︎︎▶︎'}}</button>
       <div id="demo-expanding-circle_controller" class="mojs-interactive__controller"></div>
     </div>
   </div>
@@ -11,36 +10,8 @@
 
 <script>
   export default {
-    data: function () {
-      return {
-        isPlaying: false,
-        prefersReducedMotion: false,
-      }
-    },
-
-    methods: {
-      playPause: function() {
-        if (this.isPlaying) {
-          this.timeline.replayBackward(
-            this.prefersReducedMotion ? 1800 : 0
-          );
-        } else {
-          this.timeline.play(
-            this.prefersReducedMotion ? 1700 : 0
-          );
-        }
-        this.isPlaying = !this.isPlaying;
-      }
-    },
 
     mounted: function () {
-      var motionQuery = matchMedia('(prefers-reduced-motion)');
-      const handleReduceMotionChanged = () => {
-        this.prefersReducedMotion = motionQuery.matches;
-      }
-      motionQuery.addListener(handleReduceMotionChanged);
-      handleReduceMotionChanged(); // trigger once on load to check initial value
-
       import('@mojs/core').then(module => {
         import('@mojs/player').then(module => {
 
@@ -174,7 +145,7 @@
             name: "demo-expanding-circle_controller",
             className: 'controller',
             isSaveState: false,
-            isHidden: true,
+            isHidden: false,
           });
 
         });
