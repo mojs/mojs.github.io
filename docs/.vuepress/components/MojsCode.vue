@@ -41,7 +41,7 @@ new mojs.Shape({
 
     props: {
       id: { type: String, default: 'code_example' },
-      controller: { type: [String, Boolean], default: false },
+      controller: { type: [String, Boolean], default: true },
       height: { type: String, default: '300px' },
       code: { type: [String, Boolean], default: '' },
       dark: { type: Boolean, default: false }, // if you want the demo to be dark 🕶

@@ -14,11 +14,12 @@
 
 
 <MojsInteractive
-  id="bouncy_circle"
-  :controller=true
+  id="bouncyCircle"
+  autoplay
+  global="bouncyCircle"
   code=
-"new mojs.Shape({
-  parent:       '#bouncy_circle',
+"const bouncyCircle = new mojs.Shape({
+  parent:       '#bouncyCircle',
   shape:        'circle',
   fill:         {'#F64040': '#FC46AD'},
   radius:       {20: 80},
@@ -27,7 +28,9 @@
   isShowStart:  true,
   easing:       'elastic.inout',
   repeat:       1,
-})"
+});
+
+bouncyCircle.play()"
 >
 </MojsInteractive>
 
@@ -39,9 +42,11 @@ Or maybe a loading animation?
 
 <MojsInteractive
   id="spinner"
+  autoplay
   height="200px"
+  global="spinner"
   code=
-"new mojs.Shape({
+"const spinner = new mojs.Shape({
   parent:           '#spinner',
   shape:            'circle',
   stroke:           '#FC46AD',
@@ -62,10 +67,9 @@ Or maybe a loading animation?
   strokeDashoffset: {'-125': '-250'},
   duration:         3000,
   easing:           'cubic.out',
-  onComplete () {
-    this.replay(0); // create an infinite loop
-  }
-})"
+});
+
+spinner.play();"
 >
 </MojsInteractive>
 
