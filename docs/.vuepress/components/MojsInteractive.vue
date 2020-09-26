@@ -48,7 +48,7 @@ or with no controlls (will have no animation, unless you provide a .play() funct
 }).play()"
 />
 
-If you want to show (and use) the decleration of the animation like this:
+If you want to show (and use) the declaration of the animation like this:
 
 const bouncyCircle = new mojs.Shape({
   ...
