@@ -42,12 +42,8 @@ or with no controlls at all (static animation, unless you provide a .play() func
   <div class="mojs-interactive">
     <div
       class="mojs-interactive__code"
-      :class="{ 'mojs-interactive__code--pinned': isPinned }"
     >
       <prism-editor :code="code" language="js" @change="change"></prism-editor>
-      <button class="button button--icon button--pin" v-on:click="pin" aria-label="Pin the code on scroll">
-        {{ isPinned ? "✖️" : "📍" }}
-      </button>
       <div class="buttons">
         <button class="button button--secondary" v-on:click="reset">Reset</button>
         <button class="button" v-on:click="updateCode">Update code</button>
@@ -90,7 +86,6 @@ or with no controlls at all (static animation, unless you provide a .play() func
       return {
         rawCode: this.code,
         isPlaying: false,
-        isPinned: false,
       }
     },
 
@@ -179,10 +174,6 @@ or with no controlls at all (static animation, unless you provide a .play() func
         }
         this.isPlaying = !this.isPlaying;
       },
-
-      pin: function() {
-        this.isPinned = !this.isPinned;
-      }
     },
 
     mounted () {
