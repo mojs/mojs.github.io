@@ -40,6 +40,7 @@ module.exports = {
           '/tutorials/getting-started.md',
           '/tutorials/shape-swirl/',
           '/tutorials/burst/',
+          '/tutorials/usage-with-react.md',
         ]
       },
       {
