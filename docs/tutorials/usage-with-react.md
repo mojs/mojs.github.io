@@ -19,7 +19,7 @@ Assign your animation to an `useRef` immutable object inside a `useEffect` hook.
 
 ## Install packages
 
-Start with installing React, ReactDOM and @mojs/core from your package manager of choice. Here we use npm:
+Start by installing React, ReactDOM and @mojs/core from your favorite package manager. Here we use npm:
 
 ```bash
 npm i react react-dom @mojs/core
@@ -177,7 +177,7 @@ const MojsExample = () => {
 export default MojsExample;
 ```
 
-Now lets add a button to play the animation when we click it. To control the animation, we can now reference the MoJS animation like this: `bouncyCircle.current.play();`
+Now lets add a button to play the animation when we click it. To control the animation, we can now reference the MoJS animation using `bouncyCircle.current.play();`
 
 ```js{19-21,25-27}
 const MojsExample = () => {
@@ -265,7 +265,7 @@ const MojsExample = ({ duration }) => {
 };
 ```
 
-As a final touch, lets add some methods to lissen some animation events, and use Reacts useState to save it as a local state:
+As a final touch, lets add some methods to listen animation events, and use Reacts useState to save it as a local state:
 
 ```js{4-5,18-23,30-33,38-40,45}
 const MojsExample = ({ duration }) => {
@@ -340,6 +340,7 @@ ReactDOM.render(
 );
 ```
 
-You can see the full example and try it out here: [CodeSandbox](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/MojsExample.js). There is also an [example of a button](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/Button.js) with a `Burst` animation using an object pooling array.
+You can see the full example and try it out here: [CodeSandbox](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/MojsExample.js).
+There is also a [button example](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/Button.js) with a `Burst` animation using an object pooling array.
 
-_If you have any questions, feel free to reach out to us on our [MoJS Slack](https://join.slack.com/t/mojs/shared_invite/zt-dlyxhupt-VR7eV2uwCnvu3Cx~Yc_L9Q), or contact me directly on Twitter: [Jonas Sandstedt](https://twitter.com/jonassandstedt). Happy animating!_
+Happy animating!_
