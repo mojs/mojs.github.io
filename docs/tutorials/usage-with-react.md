@@ -343,4 +343,8 @@ ReactDOM.render(
 You can see the full example and try it out here: [CodeSandbox](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/MojsExample.js).
 There is also a [button example](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/Button.js) with a `Burst` animation using an object pooling array.
 
-Happy animating!_
+::: tip Usage with Server Side Rendering (SSR)
+Note that MoJS is a client-side library, and is not meant to be run on a server. So if you are using a library like Next.js or Gatsby, make sure not to run your MoJS code on the server, just on the client side. You can do this by using the `useEffect` hook like we did above, or using a dynamic import ([read more here](https://dev.to/vvo/how-to-solve-window-is-not-defined-errors-in-react-and-next-js-5f97)).
+:::
+
+Happy animating!
