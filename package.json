@@ -4,7 +4,7 @@
   "description": "Official mojs website for tutorials and documentation",
   "private": true,
   "scripts": {
-    "start": "vuepress dev docs --no-cache",
+    "dev": "vuepress dev docs --no-cache --open --host localhost",
     "build": "vuepress build docs --no-cache",
     "deploy": ". deploy.sh"
   },
