@@ -344,7 +344,8 @@ You can see the full example and try it out here: [CodeSandbox](https://codesand
 There is also a [button example](https://codesandbox.io/s/mojs-react-example-kbikb?file=/src/Button.js) with a `Burst` animation using an object pooling array.
 
 ::: tip Usage with Server Side Rendering (SSR)
-Note that MoJS is a client-side library, and is not meant to be run on a server. So if you are using a library like Next.js or Gatsby, make sure not to run your MoJS code on the server, just on the client side. You can do this by using the `useEffect` hook like we did above, or using a dynamic import ([read more here](https://dev.to/vvo/how-to-solve-window-is-not-defined-errors-in-react-and-next-js-5f97)).
+
+Note that this is a client-side library, and is not meant to be run on a server. So if you are using a library like Next.js, Gatsby, Nuxt.js  or Angular Universal, make sure not to run your MoJS code on the server, just on the client side. How to do that differs from the library you are using. In React based libraries you can use the `useEffect` hook or a dynamic import ([read more here](https://dev.to/vvo/how-to-solve-window-is-not-defined-errors-in-react-and-next-js-5f97)).
 :::
 
 Happy animating!
