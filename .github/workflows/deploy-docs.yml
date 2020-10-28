@@ -24,7 +24,7 @@ jobs:
         uses: EndBug/add-and-commit@master
         with:
           branch: "master"
-          add: "docs/.vuepress/dist"
+          add: "docs/.vuepress/dist --force"
           message: "Deploy docs"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
