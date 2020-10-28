@@ -20,11 +20,14 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
+      - name: Navigate into the build dist folder
+        run: cd docs/.vuepress/dist
+
       - name: Commit changes
         uses: EndBug/add-and-commit@master
         with:
           branch: "master"
-          add: "docs/.vuepress/dist --force"
+          add: ". --force"
           message: "Deploy docs"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
