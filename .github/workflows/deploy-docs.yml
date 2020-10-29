@@ -20,11 +20,17 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
+      - name: Init a new repository
+        run: |
+          cd docs/.vuepress/dist
+          git init
+          git add -A
+
       - name: Commit changes
-        run: cd docs/.vuepress/dist
         uses: EndBug/add-and-commit@master
         with:
           branch: "master"
+          cwd: "./docs/.vuepress/dist"
           add: ". --dry-run"
           message: "Deploy docs"
         env:
