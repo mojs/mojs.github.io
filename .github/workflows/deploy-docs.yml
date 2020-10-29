@@ -20,12 +20,17 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
-      - name: Deploy the website to the master branch
+      - name: Init a new repository
         run: |
           cd docs/.vuepress/dist
           git init
-          git add -A
-          git commit -m "Deploy docs"
-          git push -f git@github.com:mojs/mojs.github.io.git master
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@master
+        with:
+          branch: "master"
+          cwd: "./docs/.vuepress/dist"
+          add: ". --force"
+          message: "Deploy docs"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
