@@ -30,7 +30,6 @@ jobs:
         uses: EndBug/add-and-commit@master
         with:
           branch: "master"
-          cwd: "./docs/.vuepress/dist"
           add: ". --dry-run"
           message: "Deploy docs"
         env:
