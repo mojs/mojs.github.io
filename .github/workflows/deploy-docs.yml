@@ -24,12 +24,6 @@ jobs:
         run: |
           cd docs/.vuepress/dist
           git init
-
-      - name: Commit changes
-        uses: EndBug/add-and-commit@master
-        with:
-          branch: "master"
-          add: ". --dry-run"
-          message: "Deploy docs"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git add -A
+          git commit -m "Deploy docs"
+          git push -f git@github.com:mojs/mojs.github.io.git master
