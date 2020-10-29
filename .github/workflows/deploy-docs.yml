@@ -25,6 +25,10 @@ jobs:
           cd docs/.vuepress/dist
           git init
 
+      - uses: actions/checkout@v2
+        with:
+          path: "./docs/.vuepress/dist"
+
       - name: Commit changes
         uses: EndBug/add-and-commit@master
         with:
