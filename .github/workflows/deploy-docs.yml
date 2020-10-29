@@ -20,17 +20,11 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
-      - name: Init a new repository
-        run: |
-          cd docs/.vuepress/dist
-          git init
-
       - name: Commit changes
         uses: EndBug/add-and-commit@master
         with:
           branch: "master"
-          cwd: "./docs/.vuepress/dist"
-          add: ". --force"
+          add: ". --dry-run"
           message: "Deploy docs"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
