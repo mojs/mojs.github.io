@@ -20,12 +20,9 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
-      - name: Deploy the website to the master branch
-        run: |
-          cd docs/.vuepress/dist
-          git config --global user.name "Xavier Foucrier"
-          git config --global user.email "xavier.foucrier@gmail.com"
-          git init
-          git add -A
-          git commit -m "Deploy docs"
-          git push -f git@github.com:mojs/mojs.github.io.git master
+      - name: Deploy the documentation
+        uses: grasilife/github-pages-deploy-action@master
+        env:
+          BASE_BRANCH: source
+          BRANCH: master
+          FOLDER: ./docs/.vuepress/dist
