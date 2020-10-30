@@ -24,7 +24,7 @@ jobs:
         run: |
           cd docs/.vuepress/dist
           git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
+          git config user.email "action@github.com"
           git init
           git add -A
           git commit -m "Deploy docs"
