@@ -20,11 +20,12 @@ jobs:
       - name: Build docs bundle
         run: npm run build
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@master
-        with:
-          branch: "master"
-          add: ". --dry-run"
-          message: "Deploy docs"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy the website to the master branch
+        run: |
+          cd docs/.vuepress/dist
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git init
+          git add -A
+          git commit -m "Deploy docs"
+          git push -f git@github.com:mojs/mojs.github.io.git master
