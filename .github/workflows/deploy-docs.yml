@@ -23,8 +23,8 @@ jobs:
       - name: Deploy the website to the master branch
         run: |
           cd docs/.vuepress/dist
-          git config --global user.name "GitHub Actions Bot"
-          git config --global user.email "action@github.com"
+          git config --global user.name "Xavier Foucrier"
+          git config --global user.email "xavier.foucrier@gmail.com"
           git init
           git add -A
           git commit -m "Deploy docs"
