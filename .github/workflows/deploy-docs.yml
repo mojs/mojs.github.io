@@ -25,5 +25,5 @@ jobs:
         env:
           BASE_BRANCH: source
           BRANCH: master
-          FOLDER: ./docs/.vuepress/dist
+          FOLDER: docs/.vuepress/dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
