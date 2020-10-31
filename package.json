@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "vuepress dev docs --no-cache --open --host localhost",
-    "build": "vuepress build docs --no-cache",
-    "deploy": ". deploy.sh"
+    "build": "vuepress build docs --no-cache"
   },
   "repository": {
     "type": "git",
