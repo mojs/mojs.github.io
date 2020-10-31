@@ -15,7 +15,7 @@ module.exports = {
     ['meta', { name: "msapplication-config", content: "/assets/favicons/browserconfig.xml"}],
     ['meta', { name: "theme-color", content: "#ffffff"}],
   ],
-  
+
   themeConfig: {
     logo: '/assets/img/logo.svg',
     nav: [
@@ -110,5 +110,5 @@ module.exports = {
     // sidebar: 'auto',
 
   }
-  
+
 }

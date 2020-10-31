@@ -175,9 +175,9 @@ circles.play()"
             console.error('Woops, please check your code for errors.', error)
           }
         }
-        
+
         // Set the prop :controller=true to include a mojs player
-        domRef = window['demo_' + this.id] || (this.global !== '' && window[this.global]); 
+        domRef = window['demo_' + this.id] || (this.global !== '' && window[this.global]);
         if (this.controller && domRef) {
           const parentDOM = document.getElementById(this.id + '_controller');
           // Create a global mojs player instance

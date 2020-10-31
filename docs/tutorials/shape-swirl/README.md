@@ -39,7 +39,7 @@ new mojs.Shape({
 ```
 </MojsCode>
 
-               
+
 Nothing interesting yet. Well maybe there is one thing - the shape magically appears just in the middle of the screen. `mojs` takes care to create as narrow container for the shape as possible, bootstraps all the markup and places the result just where you want it. Pretty handy. `isShowStart` property says to the shape to be visible even before any animations starts.
 
 Obviously, you can style the shape as you want (play around with the different props and use the buttons to update the code):
@@ -805,7 +805,7 @@ parentDOM.addEventListener( 'click', function (e) {
   circle2
     .tune({ x: e.offsetX, y: e.offsetY  })
     .replay();
-  
+
 });
 
 "
@@ -881,11 +881,11 @@ const circplePurple = new mojs.Shape({
 
 parentDOM.addEventListener( 'click', function (e) {
   circle1.replay();
-  
+
   circle2
     .tune({ y: -100 })
     .replay();
-  
+
   circle3
     .tune({ y: { [-100] : 0 } })
     .replay();
@@ -924,7 +924,7 @@ document.addEventListener( 'click', function (e) {
 ```
 </MojsCode>
 
-<!-- TODO: 
+<!-- TODO:
 Add an tuned example based on the mouse. Like (the code below doesn't work, maybe a bug?)
 Also see the hidden code above:
 // used the click events values to tune from where the
@@ -983,17 +983,17 @@ for ( let i = 0; i < 4; i++ ) {
 }
 
 document.addEventListener( 'click', function (e) {
-  
+
    mainCircle
     .tune({ x: e.offsetX, y: e.offsetY })
     .replay();
-  
+
     for ( let i = 0; i < smallCircles.length; i++ ) {
       smallCircles[i]
         .generate()
-        .replay(); 
+        .replay();
     }
-  
+
 });
 ">
 ```js
@@ -1010,7 +1010,7 @@ document.addEventListener( 'click', function (e) {
   for ( let i = 0; i < smallCircles.length; i++ ) {
     smallCircles[i]
       .generate()
-      .replay(); 
+      .replay();
   }
 });
 ```
@@ -1099,7 +1099,7 @@ const heart = new mojs.Shape({
 });
 ```
 </ShapeSwirlCustomShapeTwo>
-        
+
 
 Here above, the middle heart has static `stroke` property on its tag, so it was left unattended by contrast with other two.
 
@@ -1197,7 +1197,7 @@ The `swirlSize` property (`10` by default) defines the deviation or amplitude of
   y:              { 0: -150 },
   radius:         8,
   swirlSize:      35,
-  swirlFrequency: 4, 
+  swirlFrequency: 4,
   duration:       1000,
   direction:       -1,
 });
@@ -1214,7 +1214,7 @@ const swirl = new mojs.ShapeSwirl({
   y:              { 0: -150 },
   radius:         8,
   swirlSize:      35,
-  swirlFrequency: 4, 
+  swirlFrequency: 4,
   duration:       1000,
   direction:       -1,
 });
@@ -1233,7 +1233,7 @@ The `swirlFrequency` property (`3` by default) defines the frequency of the sine
   fill:           '#F64040',
   y:              { 0: -150 },
   radius:         8,
-  swirlFrequency: 10, 
+  swirlFrequency: 10,
   duration:       1000,
 });
 
@@ -1248,7 +1248,7 @@ const swirl = new mojs.ShapeSwirl({
   fill:           '#F64040',
   y:              { 0: -150 },
   radius:         8,
-  swirlFrequency: 10, 
+  swirlFrequency: 10,
   duration:       1000,
 });
 ```
@@ -1414,7 +1414,7 @@ const SWIRL_OPTS = {
 const swirl1 = new mojs.ShapeSwirl({
   ...SWIRL_OPTS
 });
-  
+
 const swirl2 = new mojs.ShapeSwirl({
   ...SWIRL_OPTS,
   direction: -1
@@ -1423,7 +1423,7 @@ const swirl2 = new mojs.ShapeSwirl({
 const swirl3 = new mojs.ShapeSwirl({
   ...SWIRL_OPTS
 });
-  
+
 const swirl4 = new mojs.ShapeSwirl({
   ...SWIRL_OPTS
 });
@@ -1436,17 +1436,17 @@ shapeSwirlContainer6.addEventListener('click', function (e) {
     .tune({ x, y })
     .generate()
     .replay();
-  
+
   swirl2
     .tune({ x, y })
     .generate()
     .replay();
-  
+
   swirl3
     .tune({ x, y })
     .generate()
     .replay();
-  
+
   swirl4
     .tune({ x, y })
     .generate()
@@ -1464,7 +1464,7 @@ Except those 6 properties, the `ShapeSwirl` is the same as a simple `Shape`.
 
 ## Recap
 
-That was a pretty fast intro to the `Shape` module. You can use [Shape APIs](/api/shape) and [ShapeSwirl API](/api/shape-swirl) sections as reference further on. What is important ro remember: 
+That was a pretty fast intro to the `Shape` module. You can use [Shape APIs](/api/shape) and [ShapeSwirl API](/api/shape-swirl) sections as reference further on. What is important ro remember:
 * You can create a `Shape` in any part of the screen, or an HTML element using the parent prop.
 * If you want to animate some property — you add a `delta` object (`{'from': to}`) that describes the transition of that property.
 * You can chain the shape transitions with `then` calls and `tune` new properties when you want.

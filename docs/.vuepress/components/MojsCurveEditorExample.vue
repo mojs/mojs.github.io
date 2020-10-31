@@ -42,7 +42,7 @@ Usage:
           import('@mojs/curve-editor').then(module => {
 
             // const startPath = 'M0, 100 C21, 100 25, 38 25, 38 C25, 38 37, 60 50, 60 C63, 60 65, 15 75, 15 C85, 15 87.71428571428571, 100 100, 100';
-            
+
             this.myCurve = new MojsCurveEditor({
               name: 'myCurve',
               // startPath: startPath, // doesn't work properly in v1.5.0
@@ -50,21 +50,21 @@ Usage:
             });
 
             this.myCurve.minimize();
-            
+
             const shape = new mojs.Shape({
               parent: '#curve-editor-example',
               y: {'-100': 100},
-              
+
               duration: 2000,
               easing: this.myCurve.getEasing()
             });
-  
+
             const timeline = new mojs.Timeline();
             timeline.add(
               shape
             );
-  
-  
+
+
             const controllerDOM = document.getElementById('curve-controller');
             new MojsPlayer({
               add: timeline,
@@ -89,7 +89,7 @@ Usage:
 
 <style>
   .curve-example {
-    margin-top: 20px; 
+    margin-top: 20px;
   }
   .curve-example--open {
     height: 300px
