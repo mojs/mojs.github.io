@@ -1,3 +1,5 @@
+# mojs.github.io – [![deploy](https://img.shields.io/github/workflow/status/mojs/mojs.github.io/Deploy%20docs)](https://github.com/mojs/mojs.github.io/actions?query=workflow:"Deploy%20docs")
+
 Website for tutorials and documentation.
 
 [![mo · js](logo.svg "mo · js")](https://mojs.github.io/)
