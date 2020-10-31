@@ -6,7 +6,7 @@ Burst is the module that helps you to craft numerous sophisticated motion effect
 
 > Please make sure you are comfortable with [Shapes & ShapeSwirl](/tutorials//shape-swirl/) before proceeding with this tutorial. Understanding those modules is crucial for understanding the `Burst`.
 
-## Burst 
+## Burst
 
 
 `Burst` is a higher order module that creates sophisticated visual effects in any part of the screen you want. You can think of `Burst` as a particle emitter that composes a bunch of `ShapeSwirl`'s together, creating a circle of particles.
@@ -442,7 +442,7 @@ So starting from 12 o'clock clockwise, the 5 childrens `fill` properties get val
 Property maps work with any property and property forms, in fact, that's just a prism (or multiplexer) that feeds children with properties by virtue of modulus function. Good aid if you want to set some property on child explicitly.
 
 
-## then, tune, generate and play 
+## then, tune, generate and play
 
 You can make `then` state chains, `tune` and `generate` any `Burst` the same as you do with `Shape` or `ShapeSwirl`. Also, since the `Burst` is merely a `ShapeSwirl` under the hood, you can use any `tween` interface public method like `play`, `setProgress`, `replay` etc (click somewhere to see):
 
@@ -487,13 +487,13 @@ document.addEventListener( 'click', function (e) {
 </MojsCode>
 
 
-## Recap 
+## Recap
 
 
 That's basically the burst, as I said you already know it so we won't go thru the children options again, instead, let's jog thru some use cases in the next section which will help as to gain some intuition over where and how to use the bursts. As you remember, - `Burst` is just a composition of a bunch of `ShapeSwirls`. There is the main swirl in the center of the burst but it has no visual shape. Also, it has no tween properties and its durations is calculated regarding the duration of the children. All child swirls use the main one as a `parent`. You can set properties of `children` with the appropriate property. Please, use the [Burst API](/api/burst) as the reference.
 
 
-## Use Cases 
+## Use Cases
 
 > Please note that the use cases section contains a lot of live code examples but the actual code samples are omitted for time savings and simplicity sake. The actual code is still available on the `Babel` tab of the pens and I highly encourage you to read through and play with them while we will walk through this section. You can omit reading large demos code since it is probably unreadable (some Codepens can contain bundled code) or it could be too large to understand sparingly, but you can return to them later. I will leave a little **(×)** mark for you to indicate that you can skip reading the source code of the Codepen for now.
 
@@ -929,7 +929,7 @@ How is it possible? Remember that the `Burst` composes `ShapeSwirls`, not simple
 </em>
 
 
-OK. Recalling the mole demo, what else did you notice? Probably confetti that appears when cube hits the floor. Right! 
+OK. Recalling the mole demo, what else did you notice? Probably confetti that appears when cube hits the floor. Right!
 
 
 
@@ -1058,7 +1058,7 @@ That's exact the same effect as we have made in the [Shape & ShapeSwirl](/tutori
 That's it for `Burst`. We've touched only the surface of the possible effects that you can compose with this module, but that's a good start to convey the idea and APIs. Also, my friends from [Codrops](http://tympanus.net/codrops/) wrote an awesome [post](http://tympanus.net/Development/Animocons/) a while ago on the `Burst` matter, definitely check it out.
 
 
-## Recap 
+## Recap
 
 
 Burst is the module that helps you to craft sophisticated motion effects with simple declarative calls. Technically, it is the main `ShapeSwirl` that composes a bunch of child `ShapeSwirls` forming the radial shape by default. `mojs` takes care about all markup bootstrapping and positioning of the module for you. The main swirl has no shape thus no presentation properties. The duration of the main swirl is calculated regarding duration of the child swirls. To control child swirls, pass the `ShapeSwirl` properties to the `children` property of the main swirl. You can find exhaustive API reference at [Burst API](/api/burst) section.

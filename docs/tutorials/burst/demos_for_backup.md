@@ -250,15 +250,15 @@ document.addEventListener( 'click', function (e) {
   burst
     .tune(coords)
     .replay();
-  
+
   circle
     .tune( coords )
     .replay();
-  
+
   heart
     .tune( coords )
     .replay();
-  
+
 });
 ```
 
@@ -299,16 +299,16 @@ const burst = new mojs.Burst({
       // { '#91D2FA' : '#ADD6CA' },
       { '#9EC9F5' : '#9ED8C6' },
       { '#91D3F7' : '#9AE4CF' },
-      
+
       { '#DC93CF' : '#E3D36B' },
       { '#CF8EEF' : '#CBEB98' },
-      
+
       { '#87E9C6' : '#1FCC93' },
       { '#A7ECD0' : '#9AE4CF' },
-      
+
       { '#87E9C6' : '#A635D9' },
       { '#D58EB3' : '#E0B6F5' },
-      
+
       { '#F48BA2' : '#CF8EEF' },
       { '#91D3F7' : '#A635D9' },
 
@@ -340,15 +340,15 @@ document.addEventListener( 'click', function (e) {
   burst
     .tune(coords)
     .replay();
-  
+
   circle
     .tune( coords )
     .replay();
-  
+
   heart
     .tune( coords )
     .replay();
-  
+
 });
 
 // new MojsPlayer({ add: burst, isPlaying: true, isRepeat: true });
@@ -445,16 +445,16 @@ document.addEventListener( 'click', function (e) {
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   bubbles
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   cross
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   circle
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
@@ -551,7 +551,7 @@ document.addEventListener( 'click',  (e) => {
   circle
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   cross
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
@@ -783,7 +783,7 @@ const vertLine = new mojs.Burst({
   count:    3,
   radius:   0,
   degree:   0,
-  
+
   children: {
     shape:        'line',
     stroke:       [ '#FC2D79', '#11CDC5', 'white'],
@@ -804,7 +804,7 @@ const horLine = new mojs.Burst({
   angle:    90,
   y:       -50,
   x:        1,
-  
+
   children: {
     shape:        'line',
     stroke:       [ '#FC2D79', '#11CDC5', 'white'],
@@ -870,7 +870,7 @@ const CHILD_OPTS = {
 const vertLine = new mojs.Burst({
   ...MAIN_OPTS,
   x: -1,
-  
+
   children: {
     ...CHILD_OPTS,
     shape:         'line',
@@ -886,7 +886,7 @@ const horLine = new mojs.Burst({
   ...MAIN_OPTS,
   angle:    90,
   y:       -50,
-  
+
   children: {
     ...CHILD_OPTS,
     shape:        'line',
@@ -934,7 +934,7 @@ const burst1 = new mojs.Burst({
     fill:   'white',
     shape:  'line',
     stroke: [ COLORS.WHITE, COLORS.VINOUS ],
-    strokeWidth: 12, 
+    strokeWidth: 12,
     radius: 'rand(30, 60)',
     radiusY: 0,
     scale: { 1: 0 },
@@ -943,7 +943,7 @@ const burst1 = new mojs.Burst({
     isForce3d: true,
   }
 });
-  
+
 document.addEventListener( 'click', function (e) {
   burst1
     .tune({ x: e.pageX, y: e.pageY })
@@ -972,7 +972,7 @@ const burst1 = new mojs.Burst({
     fill:   'white',
     shape:  'line',
     stroke: [ COLORS.WHITE, COLORS.VINOUS ],
-    strokeWidth: 12, 
+    strokeWidth: 12,
     radius: 'rand(30, 60)',
     radiusY: 0,
     scale: { 1: 0 },
@@ -997,13 +997,13 @@ const burst2 = new mojs.Burst({
     isForce3d:  true
   }
 });
-  
+
 document.addEventListener( 'click', function (e) {
   burst1
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   burst2
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
@@ -1031,7 +1031,7 @@ const burst1 = new mojs.Burst({
     fill:   'white',
     shape:  'line',
     stroke: [ COLORS.WHITE, COLORS.VINOUS ],
-    strokeWidth: 12, 
+    strokeWidth: 12,
     radius: 'rand(30, 60)',
     radiusY: 0,
     scale: { 1: 0 },
@@ -1076,22 +1076,22 @@ const circle2 = new mojs.Shape({
   easing: 'cubic.out',
   delay: 150,
 });
-  
+
 document.addEventListener( 'click', function (e) {
   burst1
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   burst2
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   circle1
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   circle2
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
@@ -1135,7 +1135,7 @@ const burst1 = new mojs.Burst({
     fill:   'white',
     shape:  'line',
     stroke: [ COLORS.WHITE, COLORS.VINOUS ],
-    strokeWidth: 12, 
+    strokeWidth: 12,
     radius: 'rand(30, 60)',
     radiusY: 0,
     scale: { 1: 0 },
@@ -1180,26 +1180,26 @@ const circle2 = new mojs.Shape({
   easing: 'cubic.out',
   delay: 150,
 });
-  
+
 document.addEventListener( 'click', function (e) {
   burst1
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   burst2
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   circle1
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   circle2
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   bgBurst
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
@@ -1275,26 +1275,26 @@ const smallCircle = new mojs.Shape({
   opacity:    { .5 : 0 },
   radius:     30,
 });
-  
+
 document.addEventListener( 'click', function (e) {
-  
+
   burst1
     .tune({ x: e.pageX, y: e.pageY })
     .generate()
     .replay();
-  
+
   largeBurst
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   largeCircle
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
   smallCircle
     .tune({ x: e.pageX, y: e.pageY })
     .replay();
-  
+
 });
 ```
 
@@ -1361,7 +1361,7 @@ const burst1 = new mojs.Burst({
   top:      75,
   y:        { 0: -65 }
 });
-  
+
 const burst2 = new mojs.Burst({
   ...BUST_OPTS,
   left:     295,
@@ -1397,70 +1397,70 @@ document.addEventListener('click', function () {
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
 ```
 
 
-# 
+#
 
 ```js
 
