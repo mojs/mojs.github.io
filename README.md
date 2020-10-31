@@ -6,7 +6,7 @@ Website for tutorials and documentation.
 
 ## Get started
 * Run `npm i` to install all dependencies
-* Run `npm run dev` to run the projet locally at `http://localhost:8080`, your browser will open the URL automatically
+* Run `npm run dev` to run the project locally at `http://localhost:8080`, your browser will open the URL automatically
 
 ## Deploy
 * Run `npm run build`
@@ -26,5 +26,39 @@ My code
 
 <!-- Some html comment -->
 ```
+
+### Conversion guide
+Guide to convert jsx pages from the old mojs website to markdown.
+
+#### Use find and replace in the file:
+- `<UniteLink link="(.+?)">(.+?)</UniteLink>` replace with `[$2]($1)`
+- `<Cite>` replace with `> ` (make sure to remove the newline too)
+- `</Cite>` replace with ``
+- `<span className="highlight">(.+?)</span>` replace with "`$1`"
+- `<div className="post__header">(.+?)</div>` replace with `# $1`
+- `<ORXLine className="post__orx-line" />` replace with `<hr />`
+- `https://github.com/legomushroom/mojs/blob/master/api/` replace with `/api/`
+- `<Pen pen="(.+?)" height="(.+?)" />` and `<Pen pen="(.+?)" height="(.+?)"></Pen>` replace with
+```html
+<Codepen
+  title="$1"
+  pen="$1"
+  user="sol0mka"
+  height="$2"
+/>
+[Link to pen](https://codepen.io/sol0mka/pen/$1)
+```
+- `<Gif className="gif--50-width" src="(.+?)" />` replace with `<img src="/assets$1" alt="Example gif" />`
+- `<CodeSample pen="(.+?)">` replace with `// pen $1 \n```js`
+- `</CodeSample>` replace with "```"
+- `<Pen (.+?)" height="500</Pen>` replace with `<pre><code>$1</code></pre>` code
+- `<Pen (.+?)</Pen>` replace with `<pre><code>$1</code></pre>`
+
+#### Convert to markdown
+- Check that you don't have any HTML errors in your file.
+- Use an online markdown converter (https://www.browserling.com/tools/html-to-markdown or http://domchristie.github.io/turndown/)
+- Manually remove wrapping divs
+- Manually see if there are anything like: ``[Burst](/tutorials/burst/)``, replace it with `[`Burst`](/tutorials/burst/)`
+- Manually replace all code sample with <MojsDemo code=" the code " penSource="the codepen id" /> or MojsInteractive element
 
 Happy coding with `mojs` :tada
