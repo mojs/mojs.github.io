@@ -1,7 +1,6 @@
-[# mojs.github.io](mojs.github.io/)
-Website for mo · js with tutorials and documentation.
+Website for tutorials and documentation.
 
-![mo · js](logo.png "mo · js")
+[![mo · js](logo.svg "mo · js")](https://mojs.github.io/)
 
 ## Get started
 * Run `npm i` to install all dependencies
