@@ -21,8 +21,9 @@ jobs:
         run: npm run build
 
       - name: Deploy the documentation
-        uses: grasilife/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@master
         env:
           BASE_BRANCH: source
           BRANCH: master
           FOLDER: ./docs/.vuepress/dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
