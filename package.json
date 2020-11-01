@@ -33,6 +33,6 @@
     "@mojs/curve-editor": "^1.5.0",
     "@mojs/player": "^0.43.16",
     "@vuepress/shared-utils": "^1.7.1",
-    "vue-prism-editor": "^1.2.2"
+    "vue-prism-editor": "^2.0.0-alpha.2"
   }
 }
