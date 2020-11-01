@@ -1,6 +1,6 @@
 # Base Easing Functions
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/qNraVV?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/BazxWag)
 
 The base easing functions could be expressed with strings that contain `easing name` and `direction` delimited by `.` or could be accessed directly on `mojs.easing` object:
 
@@ -64,4 +64,4 @@ The full list of base functions:
 
 ```
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/qNraVV?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/BazxWag)

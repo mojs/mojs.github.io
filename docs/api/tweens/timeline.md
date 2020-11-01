@@ -1,6 +1,6 @@
 # Timeline
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/LZWZON?editors=0011)
+- [CodePen Example](https://codepen.io/sandstedt/pen/bGeMqzw?editors=0011)
 - [Tween API](tween.md)
 
 `Timeline` inherits all properties, callbacks and public methods from `Tween`, the only difference between `Tween` and `Timeline` is that the later doesn't have the `duration` property - it gets calculated from durations/delays of children. Also `Timeline` add two public methods that can recieve children. Please check the Tween API for reference.
@@ -38,5 +38,5 @@ const timeline = new mojs.Timeline({
 
 ```
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/LZWZON?editors=0011)
+- [CodePen Example](https://codepen.io/sandstedt/pen/bGeMqzw?editors=0011)
 - [Tween API](tween.md)

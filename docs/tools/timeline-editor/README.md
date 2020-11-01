@@ -1,4 +1,4 @@
-## [Timeline Editor](https://github.com/mojs/mojs-timeline-editor)
+# [Timeline Editor](https://github.com/mojs/mojs-timeline-editor)
 [![npm](https://img.shields.io/npm/v/@mojs/timeline-editor.svg)](https://www.npmjs.com/package/@mojs/timeline-editor)
 
 MojsTimelineEditor is a GUI plugin for interactive `html`/`custom points`/`timeline` editing while crafting your animations.
