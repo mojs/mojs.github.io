@@ -1,6 +1,6 @@
 # Bezier Curves
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/BzWLre?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/QWErpLw)
 
 The bezier curves functions can be expressed with string containing `bezier()` function or with `mojs.easing.bezier` constructor that returns a function:
 
@@ -12,4 +12,4 @@ The bezier curves functions can be expressed with string containing `bezier()` f
   // ...
 ```
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/BzWLre?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/QWErpLw)
