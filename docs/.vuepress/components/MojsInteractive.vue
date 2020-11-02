@@ -81,8 +81,6 @@ circles.play()"
   <div class="mojs-interactive">
     <div class="mojs-interactive__code">
       <prism-editor
-        v-model="code"
-        :highlight="highlighter"
         :code="rawCode"
         language="js"
         @change="change"
@@ -113,15 +111,8 @@ circles.play()"
 </template>
 
 <script>
-// import Prism Editor
-import { PrismEditor } from "vue-prism-editor";
-import "vue-prism-editor/dist/prismeditor.min.css"; // import the styles somewhere
-
-// import highlighting library (you can use any library you want just return html string)
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism-tomorrow.css"; // import syntax highlighting styles
+import prism from "prismjs";
+import PrismEditor from "vue-prism-editor";
 
 export default {
   components: {
@@ -154,10 +145,6 @@ export default {
   },
 
   methods: {
-    highlighter: function (code) {
-      return highlight(code, languages.js); // languages.<insert language> to return html with markup
-    },
-
     change: function (c) {
       this.rawCode = c;
     },
