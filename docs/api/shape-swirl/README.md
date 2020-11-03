@@ -1,7 +1,7 @@
 # ShapeSwirl
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/pbebwQ?editors=0010)
-- [Shape API](shape.md)
+- [Shape API](../shape/README.md)
 - [Tween API](../tweens/tween.md)
 
 Full API reference:
