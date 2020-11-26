@@ -61,4 +61,4 @@ Guide to convert jsx pages from the old mojs website to markdown.
 - Manually see if there are anything like: ``[Burst](/tutorials/burst/)``, replace it with `[`Burst`](/tutorials/burst/)`
 - Manually replace all code sample with <MojsDemo code=" the code " penSource="the codepen id" /> or MojsInteractive element
 
-Happy coding with `mojs` :tada
+Happy coding with `mojs` :tada:
