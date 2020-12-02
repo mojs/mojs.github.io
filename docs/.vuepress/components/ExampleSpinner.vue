@@ -31,14 +31,14 @@
         fill:             'none',
         left:             '50%',
         top:              '50%',
-        angle:            {'-90': '270'},
+        rotate:            {'-90': '270'},
         radius:           20,
         isShowStart:      true,
         duration:         2000,
         easing:           'back.in',
       })
       .then({
-        angle:            {'-90': '270'},
+        rotate:            {'-90': '270'},
         strokeDashoffset: {'-125': '-250'},
         duration:         3000,
         easing:           'cubic.out',

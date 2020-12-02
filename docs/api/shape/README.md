@@ -56,7 +56,7 @@ const shape = new mojs.Shape({
   y:                0,
 
   // ∆ :: Angle. {Number, String}
-  angle:            0,
+  rotate:            0,
 
   // ∆ :: Scale of the module. {Number}
   scale:            1,

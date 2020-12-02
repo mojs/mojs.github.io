@@ -56,7 +56,7 @@
           const OPTS = {
             shape:   'bubble',
             scale:   { 0 : 1 },
-            angle:   { [-90] : endAngle, easing: 'cubic.out'  },
+            rotate:   { [-90] : endAngle, easing: 'cubic.out'  },
             y:       { 0: -yShift },
             easing:  'sin.out',
             radius:  43,
@@ -66,7 +66,7 @@
           // bubble then options
           const THEN_OPTS = {
             y:        50,
-            angle:    { to: -45, easing: 'cubic.in' },
+            rotate:    { to: -45, easing: 'cubic.in' },
             scale:    { to: 0, easing: 'quad.in' },
             easing:   'sin.in',
           }
@@ -96,10 +96,10 @@
             origin:   '0% 100%',
             delay:    delay += delayStep,
             x: 10, y: { [-55]: -55 - yShift},
-            angle:   { 40 : -endAngle  },
+            rotate:   { 40 : -endAngle  },
           }).then({
             ...THEN_OPTS,
-            angle: { to: 90, easing: 'expo.in' }
+            rotate: { to: 90, easing: 'expo.in' }
           });
 
           const logoRectangle = new mojs.Shape({
@@ -114,7 +114,7 @@
             easing:   'quint.out',
           }).then({
             scale: 0,
-            angle: 90,
+            rotate: 90,
             delay: 775,
             easing: 'quad.in'
           });
@@ -132,7 +132,7 @@
             y:       { [-25] : 0 }
           }).then({
             scale: 0,
-            angle: 180,
+            rotate: 180,
             delay: 600,
             easing: 'sin.in'
           });
@@ -145,7 +145,7 @@
             delay:    delay += delayStep,
             y:        { [-85] : -85 - yShift },
             x:        15,
-            angle:    { [-30]: endAngle }
+            rotate:    { [-30]: endAngle }
           }).then({
             ...THEN_OPTS,
             duration: 300,
@@ -191,7 +191,7 @@
             scale: 0,
             duration: 1.35*duration,
             delay: 450,
-            angle: 360,
+            rotate: 360,
             easing: 'cubic.in'
           });
 
