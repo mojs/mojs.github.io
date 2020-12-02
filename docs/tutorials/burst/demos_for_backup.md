@@ -15,7 +15,7 @@ body {
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 4: 19 },
-  angle:    45,
+  rotate:    45,
   children: {
     shape:        'line',
     radius:       3,
@@ -53,7 +53,7 @@ const circle = new mojs.Shape({
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 6: RADIUS - 7 },
-  angle:    45,
+  rotate:    45,
   children: {
     shape:        'line',
     radius:       RADIUS/7.3,
@@ -125,7 +125,7 @@ const circle = new mojs.Shape({
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 6: RADIUS - 3 },
-  angle:    45,
+  rotate:    45,
   children: {
     shape:        'star',
     radius:       RADIUS/2.2,
@@ -170,7 +170,7 @@ document.addEventListener( 'click', function (e) {
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 4: 32 },
-  angle:    45,
+  rotate:    45,
   count:    14,
   children: {
     radius:       2.5,
@@ -220,7 +220,7 @@ const circle = new mojs.Shape({
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 4: RADIUS },
-  angle:    45,
+  rotate:    45,
   count:    14,
   timeline: { delay: 300 },
   children: {
@@ -289,7 +289,7 @@ const circle = new mojs.Shape({
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 4: RADIUS },
-  angle:    45,
+  rotate:    45,
   count:    14,
   timeline: { delay: 300 },
   children: {
@@ -389,7 +389,7 @@ document.addEventListener( 'click', function (e) {
 const burst = new mojs.Burst({
   left: 0, top: 0,
   radius:   { 0: 30 },
-  angle:    'rand(0, 360)',
+  rotate:    'rand(0, 360)',
   timeline: { delay: 50 },
   children: {
     shape:        'line',
@@ -422,7 +422,7 @@ const bubbles = new mojs.Burst({
 const cross = new mojs.Shape({
   left: 0, top: 0,
   shape:    'cross',
-  angle:    45,
+  rotate:    45,
   radius:   9,
   scale:    { 0: 1 },
   stroke:   'white',
@@ -534,7 +534,7 @@ const circle = new mojs.Shape({
 
 const cross = new mojs.Shape({
   top: 0, left: 0,
-  angle:        45,
+  rotate:        45,
   shape:        'cross',
   radius:       { 10: 0 },
   stroke:       'white',
@@ -565,7 +565,7 @@ document.addEventListener( 'click',  (e) => {
 const burst = new mojs.Burst({
   left: 0, top: 0,
   degree:   180,
-  angle:    90,
+  rotate:    90,
   radius:   { 10: 25 },
   count:    5,
   children: {
@@ -721,7 +721,7 @@ const meteors = new mojs.Burst({
   count:    3,
   radius:   { 0: 250 },
   degree:   0,
-  angle:    225,
+  rotate:    225,
 
   children: {
     shape:        'line',
@@ -801,7 +801,7 @@ const horLine = new mojs.Burst({
   count:    3,
   radius:   0,
   degree:   0,
-  angle:    90,
+  rotate:    90,
   y:       -50,
   x:        1,
 
@@ -884,7 +884,7 @@ const vertLine = new mojs.Burst({
 
 const horLine = new mojs.Burst({
   ...MAIN_OPTS,
-  angle:    90,
+  rotate:    90,
   y:       -50,
 
   children: {
@@ -986,7 +986,7 @@ const burst2 = new mojs.Burst({
   left: 0, top: 0,
   count:  3,
   radius: { 0: 250 },
-  angle: 'rand(0, 360)',
+  rotate: 'rand(0, 360)',
   children: {
     shape:      [ 'circle', 'rect' ],
     points:     5,
@@ -1240,7 +1240,7 @@ const largeBurst = new mojs.Burst({
   left: 0, top: 0,
   count:          4,
   radius:         0,
-  angle:         45,
+  rotate:         45,
   radius:        { 0: 450  },
   children: {
     shape:        'line',
@@ -1306,7 +1306,7 @@ var burst1 = new mojs.Burst({
   y:              { 0: -100, easing: 'cubic.in' },
   count:          'rand(4,6)',
   degree:         40,
-  angle:         -25,
+  rotate:         -25,
   radius:         { 0 : 100 },
   children: {
     fill:           'white',
@@ -1339,7 +1339,7 @@ const BUST_OPTS = {
   parent:         '#js-container',
   count:          'rand(3,5)',
   degree:         40,
-  angle:         -25,
+  rotate:         -25,
   radius:         { 25 : 75 },
   children: {
     fill:           'white',

@@ -315,7 +315,7 @@ const rect = new mojs.Shape({
   strokeWidth:  { 10: 0 },
   strokeDasharray: '100%',
   strokeDashoffset: { '-100%' : '100%' },
-  angle:        { 0: 180 },
+  rotate:        { 0: 180 },
 
   duration:     2000,
   repeat:       999,
@@ -328,7 +328,7 @@ const polygon = new mojs.Shape({
   left:         '75%',
   fill:         { 'deeppink' : '#00F87F' },
   x:            { 'rand(-100%, -200%)' : 0  },
-  angle:        { 0: 'rand(0, 360)' },
+  rotate:        { 0: 'rand(0, 360)' },
   radius:       25,
 
   duration:     2000,
@@ -357,7 +357,7 @@ const rect = new mojs.Shape({
   strokeWidth:  { 10: 0 },
   strokeDasharray: '100%',
   strokeDashoffset: { '-100%' : '100%' },
-  angle:        { 0: 180 },
+  rotate:        { 0: 180 },
 
   duration:     2000,
   repeat:       999,
@@ -369,7 +369,7 @@ const polygon = new mojs.Shape({
   left:         '75%',
   fill:         { 'deeppink' : '#00F87F' },
   x:            { 'rand(-100%, -200%)' : 0  },
-  angle:        { 0: 'rand(0, 360)' },
+  rotate:        { 0: 'rand(0, 360)' },
   radius:       25,
 
   duration:     2000,
@@ -380,7 +380,7 @@ const polygon = new mojs.Shape({
 
 Here, delta of the `strokeDashoffset` property on the rectangle uses **_unit based_** values. The delta of the `x` property of the polygon shape uses random unit based values. The delta of the `fill` property for all the shapes uses **_color keywords_** to describe color transitions.
 
-The nice thing about declarative APIs is that you define _what_ you want to do by contrast with _how_ to do it, so it makes the intention of the transition crystal clear with just one short glimpse. Consider this code sample of a triangle:
+The nice thing about declarative APIs is that you define _what_ you want to do by contrast with _how_ to do it, so it makes the intention of the transition crystal clear with just one short glimpse. Consider this code sample of a trirotate:
 
 <MojsInteractive
   id="triangle"
@@ -390,7 +390,7 @@ The nice thing about declarative APIs is that you define _what_ you want to do b
   shape:      'polygon',
   fill:       'orange',
   radius:     65,
-  angle:      { [-120]: -40 },
+  rotate:      { [-120]: -40 },
   x:          { [-200]: 20 },
   y:          { [50]: -20 },
   scaleX:     { 0 : 1.3 },
@@ -515,7 +515,7 @@ You can chain shape states with `then` calls (hit play button to see):
   stroke:         '#FC46AD',
   radius:         10,
   strokeWidth:    20,
-  angle:          { [-180] : 0 },
+  rotate:          { [-180] : 0 },
 
   duration:       600
 }).then({
@@ -544,7 +544,7 @@ Yet you can set entire new `delta` for `then` call (see `strokeWidth` and `strok
   stroke:       'cyan',
   radius:       10,
   strokeWidth:  20,
-  angle:        { [-180] : 0 },
+  rotate:        { [-180] : 0 },
 
   duration:     600
 }).then({
@@ -568,7 +568,7 @@ The last thing to note is that if the `duration` property is not set in the new 
   stroke:         'cyan',
   radius:         10,
   strokeWidth:    20,
-  angle:          { [-180] : 0 },
+  rotate:          { [-180] : 0 },
   top: '50%', y: -20,
 
   duration:       600,
@@ -578,7 +578,7 @@ The last thing to note is that if the `duration` property is not set in the new 
   // duration here will be 600 too because inherited from the previous block
   // delay here will have default 0 value
 
-  angle:          -360,
+  rotate:          -360,
   scale:          2,
   strokeWidth:    0,
   stroke:         { 'magenta' : 'yellow'  }
@@ -598,7 +598,7 @@ const shape = new mojs.Shape({
   // shape properties which we have already used
   shape:          'rect',
   stroke:         'cyan',
-  angle:          { [-360] : 0 },
+  rotate:          { [-360] : 0 },
 
   // tween properties
   duration:       600,
@@ -663,7 +663,7 @@ const OPTS = {
   radius:         50,
   strokeWidth:    { 50 : 0 },
   scale:          { 0: 1 },
-  angle:          { 'rand(-35, -70)': 0 },
+  rotate:          { 'rand(-35, -70)': 0 },
 };
 
 let delay = 0,
@@ -777,7 +777,7 @@ const OPTS = {
   radius:         25,
   strokeWidth:    { 50 : 0 },
   scale:          { 0: 1 },
-  angle:          { 'rand(-35, -70)': 0 },
+  rotate:          { 'rand(-35, -70)': 0 },
   duration:       500,
   left: 0,        top: 0,
   easing:         'cubic.out',
@@ -1177,7 +1177,7 @@ const shapeSwirl = new mojs.ShapeSwirl({
   swirlFrequency: 3, // defines frequency of the sine
   pathScale:      'rand( .1, 1 )', // defines how much the total path length should be scaled
   direction:      1, // direction of the sine could be 1 or -1
-  degreeShift:    45, // angle shift for the sinusoidal path
+  degreeShift:    45, // rotatation shift for the sinusoidal path
 });
 ```
 
@@ -1362,7 +1362,7 @@ const swirl = new mojs.ShapeSwirl({
 The `pathScale` property will become very useful when we will discuss the `Burst` module shortly and will have a bunch of `ShapeSwirls` at once, especially when we will need to randomize their sine lengths.
 
 ### 6. degreeShift
-The `degreeShift` property (`0` by default) defines angle of the swirl. This property becomes interesting when `shapeSwirl` is used inside other modules (like `Burst`). For now it will act just like angle of the sine path. Here is an example for `degreeShift: 90`:
+The `degreeShift` property (`0` by default) defines rotatation of the swirl. This property becomes interesting when `shapeSwirl` is used inside other modules (like `Burst`). For now it will act just like rotatation of the sine path. Here is an example for `degreeShift: 90`:
 
 <MojsCode
   notice="Click anywhere to trigger the animation"

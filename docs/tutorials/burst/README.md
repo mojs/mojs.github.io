@@ -165,7 +165,7 @@ const burst = new mojs.Burst({
   parent: parent,
   radius:   { 0: 100 },
   count:    7,
-  angle:    { 0: 90 },
+  rotate:    { 0: 90 },
   opacity:  { 1: 0 },
 });
 
@@ -178,7 +178,7 @@ parent.addEventListener( 'click', function (e) {
 const burst = new mojs.Burst({
   radius:   { 0: 100 },
   count:    7,
-  angle:    { 0: 90 },
+  rotate:    { 0: 90 },
   opacity:  { 1: 0 },
 });
 ```
@@ -249,7 +249,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     fill:       { 'cyan' : 'yellow' },
     radius:     20,
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000
   }
 });
@@ -267,7 +267,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     fill:       { 'cyan' : 'yellow' },
     radius:     20,
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000
   }
 });
@@ -298,7 +298,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     points:     5,
     fill:       { 'cyan' : 'yellow' },
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000,
     delay:      'stagger(0, 100)'
   }
@@ -317,7 +317,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     points:     5,
     fill:       { 'cyan' : 'yellow' },
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000,
     delay:      'stagger(0, 100)'
   }
@@ -349,7 +349,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     points:     5,
     fill:       { 'cyan' : 'yellow' },
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000,
     delay:      'stagger( rand(0, 200) )'
   }
@@ -369,7 +369,7 @@ const burst = new mojs.Burst({
     shape:      'polygon',
     points:     5,
     fill:       { 'cyan' : 'yellow' },
-    angle:      { 360: 0 },
+    rotate:      { 360: 0 },
     duration:   2000,
     delay:      'stagger( rand(0, 200) )'
   }
