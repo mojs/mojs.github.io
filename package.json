@@ -26,7 +26,7 @@
   "devDependencies": {
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
-    "vuepress": "^1.3.1"
+    "vuepress": "^1.7.1"
   },
   "dependencies": {
     "@mojs/core": "^0.288.2",
