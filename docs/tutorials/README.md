@@ -14,3 +14,6 @@ sidebarDepth: 0
 ## Modules
 - [Shape & ShapeSwirl](./shape-swirl/)
 - [Burst](./burst/)
+
+## SSR
+- [Usage with React](./usage-with-react.md)
