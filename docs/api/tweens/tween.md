@@ -1,7 +1,7 @@
 # Tween
 
 - [CodePen Example](https://codepen.io/sandstedt/pen/ZEOoePr?editors=0011)
-- [Timeline](timeline.md)
+- [Timeline](/api/tweens/timeline.md)
 
 Full API reference:
 
@@ -136,4 +136,4 @@ const tween = new mojs.Tween({
 ```
 
 - [CodePen Example](https://codepen.io/sandstedt/pen/ZEOoePr?editors=0011)
-- [Timeline](timeline.md)
+- [Timeline](/api/tweens/timeline.md)

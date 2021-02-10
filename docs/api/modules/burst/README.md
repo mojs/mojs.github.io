@@ -1,11 +1,11 @@
 # Burst
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/JKWKVR?editors=0010)
-- [ShapeSwirl API](../shape-swirl.md)
-- [Stagger Strings API](../syntax/stagger.md)
-- [Property Maps API](../syntax/property-maps.md)
-- [Tween API](../tweens/tween.md)
-- [Timeline API](../tweens/timeline.md)
+- [ShapeSwirl API](/api/modules/shape-swirl/)
+- [Stagger Strings API](/api/utils/stagger.md)
+- [Property Maps API](/api/syntax/property-maps.md)
+- [Tween API](/api/tweens/tween.md)
+- [Timeline API](/api/tweens/timeline.md)
 
 Full API reference:
 
@@ -164,8 +164,8 @@ const burst = new mojs.Burst({
 ```
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/JKWKVR?editors=0010)
-- [ShapeSwirl API](../shape-swirl.md)
-- [Stagger Strings API](../syntax/stagger.md)
-- [Property Maps API](../syntax/property-maps.md)
-- [Tween API](../tweens/tween.md)
-- [Timeline API](../tweens/timeline.md)
+- [ShapeSwirl API](/api/modules/shape-swirl/)
+- [Stagger Strings API](/api/utils/stagger.md)
+- [Property Maps API](/api/syntax/property-maps.md)
+- [Tween API](/api/tweens/tween.md)
+- [Timeline API](/api/tweens/timeline.md)

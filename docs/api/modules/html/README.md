@@ -5,7 +5,7 @@
 ## References:
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/b8831849500f0d5cd0ab5691ebe17873?editors=0010)
-- [Tween API](../tweens/tween.md)
+- [Tween API](/api/tweens/tween.md)
 
 ## Contents:
 
@@ -249,4 +249,4 @@ This makes `mojs` animations ultimately flexible.
 
 References:
 
-- [Tween API](../tweens/tween.md)
+- [Tween API](/api/tweens/tween.md)
