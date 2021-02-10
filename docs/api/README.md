@@ -8,10 +8,10 @@ sidebarDepth: 0
 ---
 
 ## Modules
-- [Html](html/README.md)
-- [Shape](shape/README.md)
-- [ShapeSwirl](shape-swirl/README.md)
-- [Burst](burst/README.md)
+- [Html](modules/html/README.md)
+- [Shape](modules/shape/README.md)
+- [ShapeSwirl](modules/shape-swirl/README.md)
+- [Burst](modules/burst/README.md)
 - MotionPath *(soon)*
 - Spriter *(soon)*
 - Radial Spring *(soon)*
