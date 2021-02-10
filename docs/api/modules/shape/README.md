@@ -1,7 +1,7 @@
 # Shape
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/bbd4fe6c1ac8519c76bc18828844e2c3)
-- [Tween API](../tweens/tween.md)
+- [Tween API](/api/tweens/tween.md)
 
 Full API reference:
 
@@ -235,4 +235,4 @@ const shape = new mojs.Shape({
 ```
 
 - [CodePen Example](https://codepen.io/sol0mka/pen/bbd4fe6c1ac8519c76bc18828844e2c3)
-- [Tween API](./tweens/tween.md)
+- [Tween API](/api/tweens/tween.md)
