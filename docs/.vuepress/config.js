@@ -62,10 +62,10 @@ module.exports = {
             title: 'Modules',
             collapsable: false,
             children: [
-              '/api/html/',
-              '/api/shape/',
-              '/api/shape-swirl/',
-              '/api/burst/',
+              '/api/modules/html/',
+              '/api/modules/shape/',
+              '/api/modules/shape-swirl/',
+              '/api/modules/burst/',
             ]
           },
           {
