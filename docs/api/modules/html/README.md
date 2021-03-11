@@ -9,10 +9,10 @@
 
 ## Contents:
 
-  - [Full API Reference](#full-api-reference)
-  - [Other CSS properties](#other-css-properties)
-  - [Teach mojs with customProperties](#teach-mojs-with-customproperties)
-  - [Independent deltas](#independent-deltas)
+- [Full API Reference](#full-api-reference)
+- [Other CSS properties](#other-css-properties)
+- [Teach mojs with customProperties](#teach-mojs-with-customproperties)
+- [Independent deltas](#independent-deltas)
 
 ## Full API Reference:
 
@@ -198,13 +198,13 @@ Other `CSS` properties would be inferred automatically, please set them in `came
 
 ```javascript
 const html = new mojs.Html({
-  el: '#js-el',
-  borderColor: { 'cyan': '#FA3204' },
-  borderWidth: { 2: 12 }
+  el: "#js-el",
+  borderColor: { cyan: "#FA3204" },
+  borderWidth: { 2: 12 },
 });
 ```
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/14bcdfac6a89b918ac0292b35c0f156e?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/vYyazRm)
 
 ### Teach mojs with customProperties
 
@@ -212,20 +212,21 @@ If property doesn't work as expected you can teach `mojs` with a `customProperti
 
 ```javascript
 const html = new mojs.Html({
-  el: '#js-el',
+  el: "#js-el",
   customProperties: {
     originY: 50,
     anotherCustomProp: 0,
-    draw (el, props) {
-      el.style['transformOrigin'] = `50% ${props.originY}%`;
-    }
-  }
+    draw(el, props) {
+      el.style["transformOrigin"] = `50% ${props.originY}%`;
+    },
+  },
 });
 ```
 
 `customProperties` object should have
-  - list of custom properties names with their `default` value (`originY: 50, anotherCustomProp: 0`).
-  - `draw` function that will be responsible for rendering that custom properties. It will be called on each animation frame and will be provided with `el` and `props` object that contain current states for all custom properties (`props.originY, props.anotherCustomProp`). Feel free to apply that state to the `el` any way that works for you.
+
+- list of custom properties names with their `default` value (`originY: 50, anotherCustomProp: 0`).
+- `draw` function that will be responsible for rendering that custom properties. It will be called on each animation frame and will be provided with `el` and `props` object that contain current states for all custom properties (`props.originY, props.anotherCustomProp`). Feel free to apply that state to the `el` any way that works for you.
 
 All custom properties are expected to be plain `numbers`, you can define `units` in the `draw` function.
 
@@ -237,9 +238,16 @@ All `delta` values of the `Html` module could have entire set of `Tween` propert
 
 ```javascript
 const html = new mojs.Html({
-  el: '#js-el',
-  x: { 200: 0, delay: 200, duration: 2000, easing: 'cubic.in' },
-  y: { 0: 200, duration: 2000, easing: 'cubic.out', onComplete () { /* ... */ } }
+  el: "#js-el",
+  x: { 200: 0, delay: 200, duration: 2000, easing: "cubic.in" },
+  y: {
+    0: 200,
+    duration: 2000,
+    easing: "cubic.out",
+    onComplete() {
+      /* ... */
+    },
+  },
 });
 ```
 
