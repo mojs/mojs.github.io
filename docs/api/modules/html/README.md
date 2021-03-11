@@ -230,7 +230,7 @@ const html = new mojs.Html({
 
 All custom properties are expected to be plain `numbers`, you can define `units` in the `draw` function.
 
-- [CodePen Example](https://codepen.io/sol0mka/pen/08ed252eed451c270e49882b08cbbd41?editors=0010)
+- [CodePen Example](https://codepen.io/sandstedt/pen/LYbMqqN?editors=0010)
 
 ### Independent deltas
 
