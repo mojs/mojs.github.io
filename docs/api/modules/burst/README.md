@@ -33,7 +33,7 @@ const burst = new mojs.Burst({
   y:                0,
 
   // ∆ :: Angle. {Number, String}
-  angle:            0,
+  rotate:            0,
 
   // ∆ :: Scale of the module. {Number}
   scale:            1,

@@ -33,11 +33,11 @@ const html = new mojs.Html({
   // ∆ :: skewY property. {String, Number, Object} [value, delta]
   skewY:      0,
   // ∆ :: rotateX property. {String, Number, Object} [value, delta]
-  angleX:     0,
+  rotateX:     0,
   // ∆ :: rotateY property. {String, Number, Object} [value, delta]
-  angleY:     0,
+  rotateY:     0,
   // ∆ :: rotateZ property. {String, Number, Object} [value, delta]
-  angleZ:     0,
+  rotateZ:     0,
   // ∆ :: scale property. {String, Number, Object} [value, delta]
   scale:      1,
   // ∆ :: scaleX property. {String, Number, Object} [value, delta]

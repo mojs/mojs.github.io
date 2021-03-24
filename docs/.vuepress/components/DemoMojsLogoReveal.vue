@@ -201,7 +201,7 @@ Usage:
             stroke:       COLORS.cyan,
             radius:       44,
             parent:       logo,
-            angle:        90,
+            rotate:        90,
             duration:     465,
             delay:        495,
             radiusY:      0,
@@ -231,7 +231,7 @@ Usage:
             stroke: COLORS.yellow,
             strokeDashoffset: { '-100%': '100%' },
             delay: 804,
-            angle: 0
+            rotate: 0
           });
 
           let StaggerShape = new mojs.stagger( mojs.Shape );
@@ -239,7 +239,7 @@ Usage:
           let underlines = new StaggerShape({
             ...LINE_OPTS,
             radius: 53,
-            angle:  0,
+            rotate:  0,
             radiusY: 0,
             y: 30,
             strokeWidth: 2,

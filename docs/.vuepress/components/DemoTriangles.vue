@@ -36,12 +36,12 @@
             isShowEnd:  false,
             duration:   465,
             radius:     65,
-            angle:      { [-120]: -40 },
+            rotate:      { [-120]: -40 },
             x:          { [-200]: 20 },
             y:          { [50 + y]: -20 + y },
             scaleX:     { 0 : 1.3 }
           };
-          const thenO = { x: 0, y, duration: 175, angle: -60, scaleX: 1 };
+          const thenO = { x: 0, y, duration: 175, rotate: -60, scaleX: 1 };
 
           const triangle1 = new mojs.Shape({ ...OPTS }).then(thenO);
           triangle1.el.style[ 'mix-blend-mode' ] = blendMode;
@@ -49,7 +49,7 @@
           const triangle2 = new mojs.Shape({
             ...OPTS,
             fill:     COLORS.hotpink,
-            angle:    { [-180] : -20 },
+            rotate:    { [-180] : -20 },
             y:        { [30+y] : -30 + y },
             scaleX:   { 0: 1.46 },
             delay:    45
@@ -59,7 +59,7 @@
           const triangle3 = new mojs.Shape({
             ...OPTS,
             fill:     COLORS.yellow,
-            angle:    { [-220] : -10 },
+            rotate:    { [-220] : -10 },
             y:        { [60+y] : -50+y },
             scaleX:   { 0: 1.3 },
             delay:    90
@@ -73,7 +73,7 @@
             shape:        'polygon',
             duration:     700,
             radius:       { 150 : 100 },
-            angle:        { '-70': '-60' },
+            rotate:        { '-70': '-60' },
             fill:         'none',
             stroke:       COLORS.cyan,
             strokeWidth:  3,
@@ -90,7 +90,7 @@
             stroke: COLORS.hotpink,
             strokeDasharray: {'30% 120%' : '0% 120%'},
             strokeDashoffset: { '42%' : '-76%' },
-            angle: { [-80] : -60 },
+            rotate: { [-80] : -60 },
             delay: 45
           });
           trangleLine2.el.style[ 'mix-blend-mode' ] = blendMode;
@@ -100,7 +100,7 @@
             stroke: COLORS.yellow,
             strokeDasharray: {'30% 120%' : '0% 120%'},
             strokeDashoffset: { '42%' : '-86%' },
-            angle: { [-90] : -60 },
+            rotate: { [-90] : -60 },
             delay: 90
           });
           trangleLine3.el.style[ 'mix-blend-mode' ] = blendMode;
