@@ -1,4 +1,4 @@
-# stagger
+# Stagger
 
 References:
 
