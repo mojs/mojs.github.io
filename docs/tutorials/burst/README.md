@@ -1072,7 +1072,7 @@ Burst is indeed an interesting module but, please don't overuse it. Your intenti
 ## Thank you!
 
 
-I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter [@legomushroom](https://twitter.com/legomushroom), ask a question on StackOverflow with `#mojs` tag, rise an issue on the [GitHub repo](https://github.com/legomushroom/mojs). You can help the project on [GitHub](https://github.com/legomushroom/mojs/). {'Love <3.'}
+I'm happy you've made it here! It was a long and intense journey, I hope you don't feel overwhelmed. I also humbly hope that these effect modules will come handy to you on your web development route. There are some more "effects" modules that will land to the mojs shortly so stay tuned. For any questions, catch me on Twitter [@legomushroom](https://twitter.com/legomushroom), ask a question on StackOverflow with `#mojs` tag, rise an issue on the [GitHub repo](https://github.com/mojs/). You can help the project on [GitHub](https://github.com/mojs/). {'Love <3.'}
 
 
 

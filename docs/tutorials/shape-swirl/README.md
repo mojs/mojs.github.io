@@ -1932,6 +1932,6 @@ Need to admit that this post was written as an introduction to more complex and 
 
 ## Thank you!
 
-I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter ([@legomushroom](https://twitter.com/legomushroom)), ask a question on StackOverflow with `#mojs` tag, rise an issue on [GitHub repo](https://github.com/mojs/mojs) or join our [Slack Community](https://mojs.slack.com/). You can help the project on [GitHub](https://github.com/legomushroom/mojs/). {'Love <3.'}
+I deeply appreciate you did it down here, I tried to make it not so boring for you. For any questions, catch me on twitter ([@legomushroom](https://twitter.com/legomushroom)), ask a question on StackOverflow with `#mojs` tag, rise an issue on [GitHub repo](https://github.com/mojs/mojs) or join our [Slack Community](https://mojs.slack.com/). You can help the project on [GitHub](https://github.com/mojs/). {'Love <3.'}
 
 Kudos to [Jonas Sandstedt](https://twitter.com/jonassandstedt) for his help in rewriting and proof reading this tutorial!
