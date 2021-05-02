@@ -7,7 +7,7 @@ Usage:
   <div class="mojs-interactive demo-mojs-logo-reveal__wrap">
     <slot></slot>
     <button class="button" v-on:click="openExample()">{{open ? 'Close demo' : 'Open demo'}}</button>
-    <p v-if="open">Try to make the ball bounce. Click on the curve to add new points. See shortcuts <a href="#shortcuts">below</a>.</p>
+    <p v-if="open">This easing curve makes the circle bounce when animating the <code>y</code> value. Click on the points to edit them, or click on the curve in between to add new points. See shortcuts <a href="#shortcuts">below</a>.</p>
     <div id="curve-editor-example" :class="(open ? 'curve-example curve-example--open ' : 'curve-example curve-example--closed ') + 'mojs-interactive__result ' + (dark ? 'mojs-interactive__result--dark' : 'mojs-interactive__result--transparent')">
       <div id="curve-controller" class="mojs-interactive__controller"></div>
     </div>
@@ -25,7 +25,7 @@ Usage:
     },
 
     props: {
-      isPlaying: { type: Boolean, default: false },
+      isPlaying: { type: Boolean, default: true },
       dark: {type: Boolean, default: false },
     },
 
@@ -40,13 +40,14 @@ Usage:
       import('@mojs/core').then(module => {
         import('@mojs/player').then(module => {
           import('@mojs/curve-editor').then(module => {
-
-            // const startPath = 'M0, 100 C21, 100 25, 38 25, 38 C25, 38 37, 60 50, 60 C63, 60 65, 15 75, 15 C85, 15 87.71428571428571, 100 100, 100';
+            //const startPath = 'M0, 100 C26, 100 30, 0 30, 0 C30, 0 37, 50 50, 50 C63, 50 75, 0 75, 0 C75, 0 83, 100 100, 100';
+            const startPath = 'M0, 100 C0, 100 0, 100 0, 100 C26, 100 30, 0 30, 0 C30, 0 37, 50 50, 50 C63, 50 75, 0 75, 0 C75, 0 83, 100 100, 100';
 
             this.myCurve = new MojsCurveEditor({
               name: 'myCurve',
-              // startPath: startPath, // doesn't work properly in v1.5.0
+              startPath: startPath, // doesn't work properly in v1.5.0
               isHiddenOnMin: true,
+              isSaveState: false,
             });
 
             this.myCurve.minimize();

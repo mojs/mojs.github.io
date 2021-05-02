@@ -3,6 +3,8 @@
 
 > `MojsCurveEditor` is a GUI plugin for interactive **custom easings / property curves** editing while crafting your animations. Part of mojs tools.
 
+[CodePen Example](https://codepen.io/sandstedt/pen/MWJNewP?editors=1010)
+
 ## TLDR;
 * Install it: `npm i @mojs/curve-editor`
 * Import it: `import MojsCurveEditor from '@mojs/curve-editor';`'
