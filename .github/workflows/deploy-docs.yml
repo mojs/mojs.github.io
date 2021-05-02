@@ -23,7 +23,5 @@ jobs:
       - name: Deploy the documentation
         uses: JamesIves/github-pages-deploy-action@4.1.1
         env:
-          BASE_BRANCH: source
-          BRANCH: master
-          FOLDER: docs/.vuepress/dist
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          folder: docs/.vuepress/dist
