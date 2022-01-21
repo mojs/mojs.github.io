@@ -28,7 +28,6 @@ html, body {
     border: none;
     position: sticky;
     top: 0;
-    z-index: 2;
     .links {
       background-color: transparent;
     }
@@ -36,7 +35,6 @@ html, body {
 
   .sidebar {
     background-color: $sidebarBg;
-    z-index: 1;
   }
 
   .content__default {
@@ -220,6 +218,7 @@ blockquote {
 }
 .mojs-interactive__controller .controller {
   position: absolute
+  z-index:2
 }
 .mojs-interactive__clicknotice {
   font-size: 0.85em
