@@ -155,6 +155,7 @@ export default {
   .home
     padding-left 1.5rem
     padding-right 1.5rem
+    padding-top 0
     .hero
       img
         max-height 210px
