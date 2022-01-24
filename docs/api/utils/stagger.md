@@ -11,7 +11,7 @@ Contents:
 
 ### Basic Usage:
 
-`stagger` is a function `not cunstructor!` that wraps `ANY` module to create staggered animations. You can treat `stagger` function as a `prism` is mounted on top of modules and splits input properties evenly between them:
+`stagger` is a function `not constructor!` that wraps `ANY` module to create staggered animations. You can treat `stagger` function as a `prism` is mounted on top of modules and splits input properties evenly between them:
 
 ```javascript
 // wrap shape in stagger
