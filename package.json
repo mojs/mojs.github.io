@@ -4,8 +4,8 @@
   "description": "Official mojs website for tutorials and documentation",
   "private": true,
   "scripts": {
-    "dev": "vuepress dev docs --no-cache --open --host localhost",
-    "build": "vuepress build docs --no-cache"
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs --no-cache --open --host localhost",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs --no-cache"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   "homepage": "https://mojs.github.io/",
   "devDependencies": {
     "cache-loader": "^4.1.0",
+    "cross-env": "^7.0.3",
     "vuepress": "^1.9.7"
   },
   "dependencies": {
