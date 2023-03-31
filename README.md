@@ -1,4 +1,4 @@
-# mojs.github.io – [![deploy](https://img.shields.io/github/workflow/status/mojs/mojs.github.io/Deploy%20docs?label=deploy)](https://github.com/mojs/mojs.github.io/actions?query=workflow:"Deploy%20docs")
+# mojs.github.io – [![deploy](https://img.shields.io/github/actions/workflow/status/mojs/mojs.github.io/deploy-docs.yml)](https://github.com/mojs/mojs.github.io/actions/workflows/deploy-docs.yml)
 
 Website for tutorials and documentation.
 
