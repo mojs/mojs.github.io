@@ -11,7 +11,7 @@ Website for tutorials and documentation.
 ## Deploy
 * Run `npm run build`
 * Try the build locally using `npx serve docs/.vuepress/dist`
-* Automatic deployment through Github Actions on the `master` branch
+* Automatic deployment through Github Actions on the `main` branch
 
 ## Tips for docs writers
 If you need very special demo that doesn't work with the `<MojsCode>` or the `MojsInteractive` components, create a new one and add it to the "components" folder. Make sure the name doesn't contain a number, VuePress doesn't like that.

@@ -25,5 +25,5 @@ jobs:
       - name: Deploy the documentation
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          branch: master
+          branch: main
           folder: docs/.vuepress/dist
