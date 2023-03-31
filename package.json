@@ -1,6 +1,6 @@
 {
   "name": "mojs.github.io",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Official mojs website for tutorials and documentation",
   "private": true,
   "scripts": {
