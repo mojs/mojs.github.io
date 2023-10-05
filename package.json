@@ -24,8 +24,8 @@
   },
   "homepage": "https://mojs.github.io/",
   "engines": {
-    "node": "^18",
-    "npm": "^9"
+    "node": "^20",
+    "npm": "^10"
   },
   "devDependencies": {
     "cache-loader": "^4.1.0",
