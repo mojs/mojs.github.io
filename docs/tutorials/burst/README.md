@@ -4,7 +4,7 @@
 Burst is the module that helps you to craft numerous sophisticated motion effects.
 - [API reference](/api/burst)
 
-> Please make sure you are comfortable with [Shapes & ShapeSwirl](/tutorials//shape-swirl/) before proceeding with this tutorial. Understanding those modules is crucial for understanding the `Burst`.
+> Please make sure you are comfortable with [Shapes & ShapeSwirl](/tutorials/shape-swirl/) before proceeding with this tutorial. Understanding those modules is crucial for understanding the `Burst`.
 
 ## Burst
 
